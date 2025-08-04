@@ -1,1 +1,322 @@
-<img src="Menu.png" alt="Descripción de la imagen">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michi Crunch - Menú Digital</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #FF6B6B;
+            --secondary-color: #4ECDC4;
+            --dark-color: #292F36;
+            --light-color: #F7FFF7;
+            --accent-color: #FFBE0B;
+            --whatsapp-color: #25D366;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+        
+        .menu-container {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            overflow: hidden;
+            margin: 2rem auto;
+            max-width: 800px;
+        }
+        
+        .logo-container {
+            padding: 1.5rem;
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        }
+        
+        .logo-img {
+            max-height: 120px;
+            width: auto;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+        
+        .logo-img:hover {
+            transform: scale(1.05);
+        }
+        
+        .welcome-section {
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .welcome-section img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-top: 1rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .welcome-section img:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        
+        .category-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            padding: 1.5rem;
+            background-color: var(--light-color);
+        }
+        
+        .category-btn {
+            border: none;
+            border-radius: 50px;
+            padding: 1rem 1.5rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            min-height: 50px;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            z-index: 1;
+            min-width: 180px;
+        }
+        
+        .category-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+            z-index: -1;
+        }
+        
+        .category-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+        
+        .category-btn:hover::before {
+            transform: translateX(100%);
+        }
+        
+        .category-btn i {
+            margin-right: 0.5rem;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .category-btn:hover i {
+            transform: scale(1.2);
+        }
+        
+        /* Efecto de pulso */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .category-btn.pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        .btn-snacks {
+            background-color: var(--accent-color);
+            color: #333;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .btn-bebidas {
+            background-color: #3A86FF;
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .btn-postres {
+            background-color: #8338EC;
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 1.25rem;
+            text-align: center;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+        
+        .footer i {
+            width: 1.25rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .map-link, .wa-link {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .map-link:hover, .wa-link:hover {
+            transform: translateY(-2px);
+        }
+        
+        .map-link:hover {
+            color: var(--secondary-color);
+        }
+        
+        .wa-link:hover {
+            color: var(--whatsapp-color);
+        }
+        
+        .fa-whatsapp {
+            color: var(--whatsapp-color);
+        }
+
+        @media (max-width: 576px) {
+            .logo-img {
+                max-height: 100px;
+            }
+            
+            .welcome-section {
+                padding: 1.5rem;
+            }
+            
+            .category-btn {
+                min-width: 160px;
+                padding: 0.8rem 1.2rem;
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-4">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <div class="menu-container">
+                    <!-- 1. Logo -->
+                 <div class="logo-container">
+                    <a href="index.html" style="display: inline-block;">
+                        <img src="/Users/alanjimenez/Documents/Michi Crunch/Web/img/Michi Crunch_logo.jpeg" 
+                            alt="Michi Crunch" 
+                            class="logo-img"
+                            loading="lazy">
+                    </a>
+                </div>
+                    
+                    <!-- 2. Mensaje de bienvenida -->
+                    <div class="welcome-section">
+                        <h2>¡Bienvenido a Michi Crunch!</h2>
+                        <p class="lead">Deliciosos snacks para disfrutar en cualquier momento</p>
+                        <img src="imagen-promocional.jpg" 
+                             alt="Promoción Michi Crunch" 
+                             class="img-fluid"
+                             loading="lazy">
+                    </div>
+                    
+                    <!-- 3. Botones de categorías con efecto de pulso -->
+                    <div class="category-buttons">
+                        <a href="snacks.html" class="category-btn btn-snacks pulse">
+                            <i class="fas fa-hamburger"></i> Snacks
+                        </a>
+                        <a href="bebidas.html" class="category-btn btn-bebidas pulse">
+                            <i class="fas fa-glass-martini-alt"></i> Bebidas
+                        </a>
+                        <a href="postres.html" class="category-btn btn-postres pulse">
+                            <i class="fas fa-ice-cream"></i> Postres
+                        </a>
+                    </div>
+                    
+                    <!-- 4. Footer -->
+                    <div class="footer">
+                        <h5>¡Visítanos o haz tu pedido!</h5>
+                        <p class="mb-1">
+                            <i class="fas fa-map-marker-alt me-2"></i>
+                            <span class="map-link" onclick="openGoogleMaps()">Ernesto Cortazar Mz86LT602</span>
+                        </p>
+                        <p class="mb-1">
+                            <i class="fab fa-whatsapp me-2"></i>
+                            <span class="wa-link" onclick="openWhatsApp()">56 5436 2947</span>
+                        </p>
+                        <p class="mb-0">
+                            <i class="fas fa-clock me-2"></i>Jueves y Viernes 7:00pm - 11:00pm
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        function openGoogleMaps() {
+            window.open('https://maps.app.goo.gl/8E9CvmUnnDv9G7v27', '_blank');
+        }
+        
+        function openWhatsApp() {
+            const phoneNumber = '5654362947';
+            const message = 'Hola Michi Crunch, me interesa hacer un pedido...';
+            const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+        }
+        
+        // Efecto de pulso aleatorio para los botones
+        document.addEventListener('DOMContentLoaded', function() {
+            const buttons = document.querySelectorAll('.category-btn');
+            
+            buttons.forEach(btn => {
+                // Pulsación aleatoria entre 1.5s y 3s
+                const randomDelay = Math.random() * 1.5 + 1.5;
+                btn.style.animationDelay = `${randomDelay}s`;
+                
+                btn.addEventListener('mouseenter', function() {
+                    this.classList.remove('pulse');
+                });
+                
+                btn.addEventListener('mouseleave', function() {
+                    this.classList.add('pulse');
+                });
+            });
+            
+            // Eventos para accesibilidad
+            document.querySelectorAll('.map-link, .wa-link').forEach(link => {
+                link.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        if (link.classList.contains('map-link')) {
+                            openGoogleMaps();
+                        } else {
+                            openWhatsApp();
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bebidas - Michi Crunch</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #FFBE0B; /* Amarillo Michi */
+            --secondary-color: #4ECDC4;
+            --dark-color: #121212; /* Fondo oscuro */
+            --light-color: #1E1E1E;
+            --accent-color: #FF6B6B;
+            --whatsapp-color: #25D366;
+            --text-color: #FFFFFF;
+        }
+        
+        body {
+            background-color: var(--dark-color);
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            color: var(--text-color);
+            background-image: url('https://img.freepik.com/vector-premium/patrones-huellas-gato-fondo-textura-pata-gato_505353-331.jpg');
+            background-attachment: fixed;
+            background-size: 300px;
+            background-position: center;
+            background-blend-mode: overlay;
+        }
+        
+        .menu-container {
+            background-color: rgba(30, 30, 30, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            overflow: hidden;
+            margin: 1rem auto;
+            max-width: 800px;
+            border: 1px solid var(--primary-color);
+        }
+        
+        .logo-container {
+            padding: 1.5rem;
+            text-align: center;
+            background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .logo-container::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="rgba(255,255,255,0.05)" d="M30,15 Q50,5 70,15 Q85,30 85,50 Q85,70 70,85 Q50,95 30,85 Q15,70 15,50 Q15,30 30,15 Z"/></svg>');
+            background-size: 60px;
+            opacity: 0.3;
+        }
+        
+        .logo-img {
+            max-height: 120px;
+            width: auto;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+            position: relative;
+            z-index: 1;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+        }
+        
+        /* Menú interactivo móvil */
+        .category-nav {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 0.5rem;
+            padding: 1rem;
+            background-color: var(--light-color);
+            -webkit-overflow-scrolling: touch;
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
+        }
+        
+        .category-nav::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .category-btn {
+            scroll-snap-align: start;
+            flex: 0 0 auto;
+            border: none;
+            border-radius: 50px;
+            padding: 0.8rem 1.5rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            white-space: nowrap;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .category-btn::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"><path fill="rgba(255,255,255,0.1)" d="M15,5 Q20,0 25,5 Q30,10 25,15 Q30,20 25,25 Q20,30 15,25 Q10,30 5,25 Q0,20 5,15 Q0,10 5,5 Q10,0 15,5 Z"/></svg>');
+            background-size: 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .category-btn:hover::before {
+            opacity: 1;
+        }
+        
+        .btn-snacks {
+            background-color: var(--primary-color);
+            color: #121212;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+        
+        .btn-bebidas {
+            background-color: #3A86FF;
+            color: white;
+        }
+        
+        .btn-postres {
+            background-color: #8338EC;
+            color: white;
+        }
+        
+        .menu-section {
+            padding: 1.5rem;
+        }
+        
+        .menu-item {
+            margin-bottom: 2rem;
+            border-bottom: 1px solid rgba(255, 190, 11, 0.3);
+            padding-bottom: 1.5rem;
+            position: relative;
+            background-color: rgba(0,0,0,0.3);
+            border-radius: 10px;
+            padding: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+        
+        .drink-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+            transition: transform 0.3s ease;
+            border: 2px solid var(--primary-color);
+        }
+        
+        .drink-image:hover {
+            transform: scale(1.02);
+        }
+        
+        .item-title {
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            font-size: 1.6rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .item-title::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-color);
+            border-radius: 3px;
+        }
+        
+        .item-desc {
+            color: var(--text-color);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        .item-quote {
+            font-style: italic;
+            color: var(--secondary-color);
+            background-color: rgba(78, 205, 196, 0.1);
+            padding: 8px;
+            border-radius: 5px;
+            margin: 10px 0;
+            border-left: 3px solid var(--secondary-color);
+        }
+        
+        .item-price {
+            background-color: var(--primary-color);
+            color: #121212;
+            padding: 0.4rem 1.2rem;
+            border-radius: 20px;
+            font-weight: 700;
+            display: inline-block;
+            margin-top: 0.5rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        
+        .footer {
+            background-color: #000;
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            border-top: 1px solid var(--primary-color);
+            position: relative;
+        }
+        
+        .footer::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-color), var(--primary-color), var(--secondary-color));
+        }
+        
+        .map-link, .wa-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            font-weight: 500;
+            position: relative;
+        }
+        
+        .map-link::after, .wa-link::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+        
+        .map-link:hover::after, .wa-link:hover::after {
+            width: 100%;
+        }
+        
+        .fa-whatsapp {
+            color: var(--whatsapp-color);
+            transition: transform 0.3s ease;
+        }
+        
+        .wa-link:hover .fa-whatsapp {
+            transform: scale(1.2);
+        }
+
+        @media (max-width: 576px) {
+            .menu-section {
+                padding: 1rem;
+            }
+            
+            .category-btn {
+                padding: 0.7rem 1.2rem;
+                font-size: 0.9rem;
+            }
+            
+            .item-title {
+                font-size: 1.4rem;
+            }
+            
+            .drink-image {
+                height: 180px;
+            }
+            
+            body {
+                background-size: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-3">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <div class="menu-container">
+                    <!-- Header -->
+                   <div class="logo-container">
+                        <a href="index.html" style="display: inline-block;">
+                            <img src="/Users/alanjimenez/Documents/Michi Crunch/Web/img/Michi Crunch_logo.jpeg" 
+                                alt="Michi Crunch" 
+                                class="logo-img"
+                                loading="lazy">
+                        </a>
+                    </div>
+                    
+                    <!-- Menú interactivo móvil -->
+                    <div class="category-nav">
+                        <a href="snacks.html" class="category-btn btn-snacks">
+                            <i class="fas fa-hamburger"></i> Snacks
+                        </a>
+                        <a href="bebidas.html" class="category-btn btn-bebidas">
+                            <i class="fas fa-glass-martini-alt"></i> Bebidas
+                        </a>
+                        <a href="postres.html" class="category-btn btn-postres">
+                            <i class="fas fa-ice-cream"></i> Postres
+                        </a>
+                    </div>
+                    
+                    <!-- Contenido de Bebidas -->
+                    <div class="menu-section">
+                        <h2 class="text-center mb-4" style="color: var(--primary-color);">Menú Michi Crunch - Bebidas Refrescantes</h2>
+                        
+                        <!-- Mojitos 1L -->
+                        <div class="menu-item">
+                            <img src="/Users/alanjimenez/Documents/Michi Crunch/Imagenes/mojito-de-mango.jpg" 
+                                 alt="Mojitos Michi" 
+                                 class="drink-image"
+                                 loading="lazy">
+                            <h3 class="item-title">🍍 MOJITOS 1L</h3>
+                            <p class="item-desc">¡Explosión de frescura en cada sorbo! Deliciosa combinación de hierbabuena, limón, soda y frutas naturales. Perfectos para compartir o disfrutar solo.</p>
+                            <span class="item-price">$90 Pesos</span>
+                            
+                            <!-- Variantes de Mojitos -->
+                            <div style="margin-top: 1.5rem;">
+                                <h4 style="color: var(--secondary-color); margin-bottom: 1rem;">Variantes Disponibles:</h4>
+                                
+                                <div class="mb-3">
+                                    <h5 class="item-title" style="font-size: 1.3rem;">🥭 MOJITO MANGO</h5>
+                                    <p class="item-desc">Dulzura tropical del mango con el toque cítrico de la hierbabuena.</p>
+                                    <p class="item-quote">"Como un atardecer playero en tu vaso"</p>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <h5 class="item-title" style="font-size: 1.3rem;">🍓 MOJITO FRESA</h5>
+                                    <p class="item-desc">Fresas jugosas mezcladas con limón y menta.</p>
+                                    <p class="item-quote">"Frescura con un toque de amor frutal"</p>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <h5 class="item-title" style="font-size: 1.3rem;">🫐 MOJITO FRUTOS ROJOS</h5>
+                                    <p class="item-desc">Mezcla de moras, frambuesas y arándanos.</p>
+                                    <p class="item-quote">"Antioxidantes con chispa de felicidad"</p>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <h5 class="item-title" style="font-size: 1.3rem;">💛 MOJITO MARACUYÁ</h5>
+                                    <p class="item-desc">Acidez vibrante y aroma tropical.</p>
+                                    <p class="item-quote">"¡Pura energía en cada sorbo!"</p>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <h5 class="item-title" style="font-size: 1.3rem;">🍋 MOJITO TRADICIONAL</h5>
+                                    <p class="item-desc">Clásico irresistible con limón verde, hierbabuena y un toque de dulce.</p>
+                                    <p class="item-quote">"Frescura que nunca pasa de moda"</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Sodas Italianas -->
+                        <div class="menu-item">
+                            <img src="/Users/alanjimenez/Documents/Michi Crunch/Imagenes/Soda Manzada.jpg" 
+                                 alt="Sodas Italianas" 
+                                 class="drink-image"
+                                 loading="lazy">
+                            <h3 class="item-title">🍸 SODA ITALIANA</h3>
+                            <p class="item-desc">Burbujas elegantes con un toque gourmet. Agua mineral con gas y siropes naturales de alta calidad.</p>
+                            
+                            <!-- Variantes de Sodas -->
+                            <div style="margin-top: 1.5rem;">
+                                <h4 style="color: var(--secondary-color); margin-bottom: 1rem;">Sabores Disponibles:</h4>
+                                
+                                <div class="mb-3">
+                                    <h5 class="item-title" style="font-size: 1.3rem;">🍏 SODA MANZANA VERDE</h5>
+                                    <p class="item-desc">Notas ácidas y refrescantes con un final crujiente.</p>
+                                    <p class="item-quote">"Como morder una manzana recién cosechada"</p>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <h5 class="item-title" style="font-size: 1.3rem;">🔵 SODA MORA AZUL</h5>
+                                    <p class="item-desc">Sabor intenso y vibrante, lleno de antioxidantes.</p>
+                                    <p class="item-quote">"Un viaje al bosque en cada burbuja"</p>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <h5 class="item-title" style="font-size: 1.3rem;">💧 AGUA MINERAL CON GAS</h5>
+                                    <p class="item-desc">Pureza burbujeante para los amantes de lo clásico.</p>
+                                    <p class="item-quote">"Simplemente refrescante, sin complicaciones"</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Footer -->
+                    <div class="footer">
+                        <h5>¡Visítanos o haz tu pedido!</h5>
+                        <p class="mb-1">
+                            <i class="fas fa-map-marker-alt me-2"></i>
+                            <span class="map-link" onclick="openGoogleMaps()">Ernesto Cortazar Mz86LT602</span>
+                        </p>
+                        <p class="mb-1">
+                            <i class="fab fa-whatsapp me-2"></i>
+                            <span class="wa-link" onclick="openWhatsApp()">56 5436 2947</span>
+                        </p>
+                        <p class="mb-0">
+                            <i class="fas fa-clock me-2"></i>Jueves y Viernes 7:00pm - 11:00pm
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        function openGoogleMaps() {
+            window.open('https://maps.app.goo.gl/8E9CvmUnnDv9G7v27', '_blank');
+        }
+        
+        function openWhatsApp() {
+            const phoneNumber = '5654362947';
+            const message = 'Hola Michi Crunch, me interesa hacer un pedido de bebidas...';
+            const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // Efecto de scroll suave para el menú móvil
+            const nav = document.querySelector('.category-nav');
+            if (nav) {
+                nav.addEventListener('wheel', (e) => {
+                    e.preventDefault();
+                    nav.scrollLeft += e.deltaY;
+                });
+            }
+            
+            // Efecto de huellitas aleatorias
+            const createPaw = () => {
+                const paw = document.createElement('div');
+                paw.innerHTML = '🐾';
+                paw.style.position = 'fixed';
+                paw.style.zIndex = '9999';
+                paw.style.fontSize = '20px';
+                paw.style.opacity = '0';
+                paw.style.animation = 'pawAnimation 2s linear forwards';
+                paw.style.left = `${Math.random() * 100}vw`;
+                paw.style.top = `${Math.random() * 100}vh`;
+                document.body.appendChild(paw);
+                
+                setTimeout(() => {
+                    paw.remove();
+                }, 2000);
+            };
+            
+            // Animación de huellitas
+            const style = document.createElement('style');
+            style.innerHTML = `
+                @keyframes pawAnimation {
+                    0% { opacity: 0; transform: scale(0.5); }
+                    20% { opacity: 0.8; transform: scale(1); }
+                    100% { opacity: 0; transform: scale(0.5); }
+                }
+            `;
+            document.head.appendChild(style);
+            
+            // Mostrar huellitas periódicamente
+            setInterval(createPaw, 3000);
+            
+            // Eventos para accesibilidad
+            document.querySelectorAll('.map-link, .wa-link').forEach(link => {
+                link.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        if (link.classList.contains('map-link')) {
+                            openGoogleMaps();
+                        } else {
+                            openWhatsApp();
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
