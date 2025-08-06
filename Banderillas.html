@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Michi Crunch - Menú Digital</title>
+    <title>Banderillas Coreanas - Michi Crunch</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -49,120 +49,10 @@
             transform: scale(1.05);
         }
         
-        /* Estilos para la página principal */
-        .welcome-section {
-            padding: 2rem;
-            text-align: center;
-        }
-        
-        .welcome-section img {
-            max-width: 100%;
-            border-radius: 10px;
-            margin-top: 1rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .welcome-section img:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-        }
-        
-        .category-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1rem;
-            padding: 1.5rem;
-            background-color: var(--light-color);
-        }
-        
-        /* Estilos para botones de categoría */
-        .category-btn {
-            border: none;
-            border-radius: 50px;
-            padding: 1rem 1.5rem;
-            font-weight: 700;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            min-height: 50px;
-            text-decoration: none;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            z-index: 1;
-            min-width: 180px;
-        }
-        
-        .category-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
-            transform: translateX(-100%);
-            transition: transform 0.6s ease;
-            z-index: -1;
-        }
-        
-        .category-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-        }
-        
-        .category-btn:hover::before {
-            transform: translateX(100%);
-        }
-        
-        .category-btn i {
-            margin-right: 0.5rem;
-            font-size: 1.2rem;
-            transition: transform 0.3s ease;
-        }
-        
-        .category-btn:hover i {
-            transform: scale(1.2);
-        }
-        
-        /* Efecto de pulso */
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-        
-        .category-btn.pulse {
-            animation: pulse 2s infinite;
-        }
-        
-        .btn-snacks {
-            background-color: var(--accent-color);
-            color: #333;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-        }
-        
-        .btn-bebidas {
-            background-color: #3A86FF;
-            color: white;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-        }
-        
-        .btn-postres {
-            background-color: #8338EC;
-            color: white;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-        }
-        
-        /* Estilos para páginas de menú */
         .menu-header {
             padding: 2rem;
             text-align: center;
-            background-color: var(--primary-color);
+            background-color: #FF6B6B;
             color: white;
         }
         
@@ -209,7 +99,6 @@
         
         .menu-item:hover {
             transform: translateX(5px);
-            border-bottom-color: var(--primary-color);
         }
         
         .item-info {
@@ -246,24 +135,6 @@
             margin-top: 0.5rem;
         }
         
-        /* Botón de volver */
-        .back-btn {
-            display: inline-block;
-            margin-top: 1rem;
-            padding: 0.5rem 1rem;
-            background-color: var(--dark-color);
-            color: white;
-            border-radius: 50px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        .back-btn:hover {
-            background-color: var(--primary-color);
-            transform: translateY(-2px);
-        }
-        
-        /* Footer común */
         .footer {
             background-color: var(--dark-color);
             color: white;
@@ -303,23 +174,33 @@
             color: var(--whatsapp-color);
         }
 
-        /* Responsive */
+        .back-btn {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: var(--dark-color);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .back-btn:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
         @media (max-width: 576px) {
             .logo-img {
                 max-height: 100px;
             }
             
-            .welcome-section, .menu-header {
+            .menu-header {
                 padding: 1.5rem;
             }
             
-            .category-btn, .menu-section {
-                padding: 0.8rem 1.2rem;
-                font-size: 0.95rem;
-            }
-            
-            .category-btn {
-                min-width: 160px;
+            .menu-section {
+                padding: 1.5rem;
             }
             
             .menu-item {
@@ -339,36 +220,109 @@
             <div class="col-12">
                 <div class="menu-container">
                     <!-- 1. Logo -->
-                 <div class="logo-container">
-                    <a href="index.html" style="display: inline-block;">
-                        <img src="/Users/alanjimenez/Documents/Michi Crunch/Web/img/Michi Crunch_logo.jpeg" 
-                            alt="Michi Crunch" 
-                            class="logo-img"
-                            loading="lazy">
-                    </a>
-                </div>
-                    
-                    <!-- 2. Mensaje de bienvenida -->
-                    <div class="welcome-section">
-                        <h2>¡Bienvenido a Michi Crunch!</h2>
-                        <p class="lead">Deliciosos snacks para disfrutar en cualquier momento</p>
-                        <img src="imagen-promocional.jpg" 
-                             alt="Promoción Michi Crunch" 
-                             class="img-fluid"
-                             loading="lazy">
+                    <div class="logo-container">
+                        <a href="index.html" style="display: inline-block;">
+                            <img src="/Users/alanjimenez/Documents/Michi Crunch/Web/img/Michi Crunch_logo.jpeg" 
+                                alt="Michi Crunch" 
+                                class="logo-img"
+                                loading="lazy">
+                        </a>
                     </div>
                     
-                    <!-- 3. Botones de categorías con efecto de pulso -->
-                     <div class="category-buttons">
-                        <a href="snacks.html" class="category-btn btn-snacks pulse">
-                            <i class="fas fa-burger"></i> Snacks
+                    <!-- 2. Encabezado del menú -->
+                    <div class="menu-header">
+                        <h1>Banderillas Especiales</h1>
+                        <p>Deliciosas brochetas con sabores únicos y explosivos</p>
+                        <a href="index.html" class="back-btn">
+                            <i class="fas fa-arrow-left me-2"></i>Volver al menú principal
                         </a>
-                        <a href="bebidas.html" class="category-btn btn-bebidas pulse">
-                            <i class="fas fa-glass-water"></i> Sodas Italianas
-                        </a>
-                        <a href="Banderillas.html" class="category-btn btn-postres pulse">
-                            <i class="fas fa-drumstick-bite"></i> Banderillas Coreanas
-                        </a>
+                    </div>
+                    
+                    <!-- 3. Sección del menú -->
+                    <div class="menu-section">
+                        <!-- Categoría Única -->
+                        <div class="menu-category">
+                            <div class="category-title">
+                                <i class="fas fa-fire"></i>
+                                <h2>Nuestras Banderillas</h2>
+                            </div>
+                            
+                            <div class="menu-item">
+                                <div class="item-info">
+                                    <h3 class="item-name">Queso Cheddar</h3>
+                                    <p class="item-description">Deliciosa banderilla con queso cheddar derretido</p>
+                                </div>
+                                <div class="item-price">$45</div>
+                            </div>
+                            
+                            <div class="menu-item">
+                                <div class="item-info">
+                                    <h3 class="item-name">Ramen</h3>
+                                    <p class="item-description">Banderilla con el auténtico sabor del ramen coreano</p>
+                                </div>
+                                <div class="item-price">$45</div>
+                            </div>
+                            
+                            <div class="menu-item">
+                                <div class="item-info">
+                                    <h3 class="item-name">Jalapeño Cheddar</h3>
+                                    <p class="item-description">La combinación perfecta de queso cheddar con jalapeño</p>
+                                    <span class="item-badge">Picante</span>
+                                </div>
+                                <div class="item-price">$45</div>
+                            </div>
+                            
+                            <div class="menu-item">
+                                <div class="item-info">
+                                    <h3 class="item-name">Flammin Hot</h3>
+                                    <p class="item-description">Para los amantes del picante extremo</p>
+                                    <span class="item-badge">Muy picante</span>
+                                </div>
+                                <div class="item-price">$45</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Sección de Combos -->
+                        <div class="menu-category">
+                            <div class="category-title">
+                                <i class="fas fa-star"></i>
+                                <h2>Combos Especiales</h2>
+                            </div>
+                            
+                            <div class="menu-item">
+                                <div class="item-info">
+                                    <h3 class="item-name">Combo 3 Banderillas</h3>
+                                    <p class="item-description">Elige 3 sabores de nuestras banderillas</p>
+                                    <span class="item-badge">Ahorra $35</span>
+                                </div>
+                                <div class="item-price">$100</div>
+                            </div>
+                            
+                            <div class="menu-item">
+                                <div class="item-info">
+                                    <h3 class="item-name">Combo Banderilla + Soda Italiana</h3>
+                                    <p class="item-description">1 banderilla a elegir + refrescante soda italiana</p>
+                                </div>
+                                <div class="item-price">$75</div>
+                            </div>
+                            
+                            <div class="menu-item">
+                                <div class="item-info">
+                                    <h3 class="item-name">Combo Banderilla + Mojito</h3>
+                                    <p class="item-description">1 banderilla a elegir + mojito refrescante</p>
+                                </div>
+                                <div class="item-price">$120</div>
+                            </div>
+                            
+                            <div class="menu-item">
+                                <div class="item-info">
+                                    <h3 class="item-name">Combo Completo</h3>
+                                    <p class="item-description">2 banderillas + papas + bebida (soda italiana o mojito)</p>
+                                    <span class="item-badge">Recomendado</span>
+                                </div>
+                                <div class="item-price">$160</div>
+                            </div>
+                        </div>
                     </div>
                     
                     <!-- 4. Footer -->
@@ -401,26 +355,22 @@
         
         function openWhatsApp() {
             const phoneNumber = '5654362947';
-            const message = 'Hola Michi Crunch, me interesa hacer un pedido...';
+            const message = 'Hola Michi Crunch, me interesa hacer un pedido de banderillas...';
             const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
             window.open(url, '_blank');
         }
         
-        // Efecto de pulso aleatorio para los botones
+        // Efecto hover para los ítems del menú
         document.addEventListener('DOMContentLoaded', function() {
-            const buttons = document.querySelectorAll('.category-btn');
+            const menuItems = document.querySelectorAll('.menu-item');
             
-            buttons.forEach(btn => {
-                // Pulsación aleatoria entre 1.5s y 3s
-                const randomDelay = Math.random() * 1.5 + 1.5;
-                btn.style.animationDelay = `${randomDelay}s`;
-                
-                btn.addEventListener('mouseenter', function() {
-                    this.classList.remove('pulse');
+            menuItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.borderBottomColor = 'var(--primary-color)';
                 });
                 
-                btn.addEventListener('mouseleave', function() {
-                    this.classList.add('pulse');
+                item.addEventListener('mouseleave', function() {
+                    this.style.borderBottomColor = '#ddd';
                 });
             });
             
