@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Michi Crunch - Menú Digital</title>
+    <title>Michi Crunch - Deliciosos Snacks Coreanos</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -16,11 +16,94 @@
             --light-color: #F7FFF7;
             --accent-color: #FFBE0B;
             --whatsapp-color: #25D366;
+            --snacks-color: #FFA500;
+            --drinks-color: #FFA500;
+            --banderillas-color: #FFA500;
         }
         
         body {
-            background-color: #f8f9fa;
             font-family: 'Segoe UI', system-ui, sans-serif;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        
+        .navbar {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-link {
+            color: var(--dark-color);
+            font-weight: 600;
+            margin: 0 10px;
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
+        .section {
+            min-height: 100vh;
+            padding: 100px 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        #inicio {
+            background: linear-gradient(135deg, rgba(255,107,107,0.1), rgba(78,205,196,0.1));
+        }
+        
+        #snacks {
+            background-color: #FFF9F2;
+        }
+        
+        #bebidas {
+            background-color: #F5F9FF;
+        }
+        
+        #banderillas {
+            background-color: #F9F5FF;
+        }
+        
+        .section-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .section-title {
+            font-weight: 700;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 4px;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            border-radius: 2px;
         }
         
         .menu-container {
@@ -28,156 +111,26 @@
             border-radius: 15px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.08);
             overflow: hidden;
-            margin: 2rem auto;
+            margin: 0 auto;
             max-width: 800px;
         }
         
-        .logo-container {
-            padding: 1.5rem;
-            text-align: center;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-        }
-        
-        .logo-img {
-            max-height: 120px;
-            width: auto;
-            object-fit: contain;
-            transition: transform 0.3s ease;
-        }
-        
-        .logo-img:hover {
-            transform: scale(1.05);
-        }
-        
-        /* Estilos para la página principal */
-        .welcome-section {
-            padding: 2rem;
-            text-align: center;
-        }
-        
-        .welcome-section img {
-            max-width: 100%;
-            border-radius: 10px;
-            margin-top: 1rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .welcome-section img:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-        }
-        
-        .category-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1rem;
-            padding: 1.5rem;
-            background-color: var(--light-color);
-        }
-        
-        /* Estilos para botones de categoría */
-        .category-btn {
-            border: none;
-            border-radius: 50px;
-            padding: 1rem 1.5rem;
-            font-weight: 700;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            min-height: 50px;
-            text-decoration: none;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            z-index: 1;
-            min-width: 180px;
-        }
-        
-        .category-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
-            transform: translateX(-100%);
-            transition: transform 0.6s ease;
-            z-index: -1;
-        }
-        
-        .category-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-        }
-        
-        .category-btn:hover::before {
-            transform: translateX(100%);
-        }
-        
-        .category-btn i {
-            margin-right: 0.5rem;
-            font-size: 1.2rem;
-            transition: transform 0.3s ease;
-        }
-        
-        .category-btn:hover i {
-            transform: scale(1.2);
-        }
-        
-        /* Efecto de pulso */
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-        
-        .category-btn.pulse {
-            animation: pulse 2s infinite;
-        }
-        
-        .btn-snacks {
-            background-color: var(--accent-color);
-            color: #333;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-        }
-        
-        .btn-bebidas {
-            background-color: #3A86FF;
-            color: white;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-        }
-        
-        .btn-postres {
-            background-color: #8338EC;
-            color: white;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-        }
-        
-        /* Estilos para páginas de menú */
         .menu-header {
             padding: 2rem;
             text-align: center;
-            background-color: var(--primary-color);
             color: white;
         }
         
-        .menu-header h1 {
-            font-weight: 700;
-            margin-bottom: 1rem;
+        .header-snacks {
+            background-color: var(--snacks-color);
         }
         
-        .menu-header p {
-            font-size: 1.1rem;
-            opacity: 0.9;
+        .header-bebidas {
+            background-color: var(--drinks-color);
         }
         
-        .menu-section {
-            padding: 2rem;
+        .header-banderillas {
+            background-color: var(--banderillas-color);
         }
         
         .menu-category {
@@ -198,79 +151,83 @@
             color: var(--primary-color);
         }
         
-        .menu-item {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 1.5rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px dashed #ddd;
-            transition: all 0.3s ease;
-        }
         
+            .menu-item {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 1.5rem;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            background-color: white;
+        }
+
         .menu-item:hover {
-            transform: translateX(5px);
-            border-bottom-color: var(--primary-color);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .item-image {
+            width: 100%;
+            height: auto;
+            max-height: 220px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .menu-item:hover .item-image {
+             transform: scale(1.05);
+        }
+
+            .item-content {
+                padding: 1.2rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
         }
         
         .item-info {
             flex: 1;
+            margin-right: 1rem;
         }
         
-        .item-name {
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-            color: var(--dark-color);
-        }
+        ..item-name {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--dark-color);
+    font-size: 1.1rem;
+}
+
+.item-description {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+.item-badge {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: #333;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.item-price {
+    font-weight: 700;
+    color: var(--primary-color);
+    white-space: nowrap;
+    font-size: 1.1rem;
+}
         
-        .item-description {
-            font-size: 0.9rem;
-            color: #666;
-            margin-bottom: 0.5rem;
-        }
-        
-        .item-price {
-            font-weight: 700;
-            color: var(--primary-color);
-            white-space: nowrap;
-            margin-left: 1rem;
-        }
-        
-        .item-badge {
-            display: inline-block;
-            background-color: var(--accent-color);
-            color: #333;
-            padding: 0.25rem 0.5rem;
-            border-radius: 4px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            margin-top: 0.5rem;
-        }
-        
-        /* Botón de volver */
-        .back-btn {
-            display: inline-block;
-            margin-top: 1rem;
-            padding: 0.5rem 1rem;
-            background-color: var(--dark-color);
-            color: white;
-            border-radius: 50px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        .back-btn:hover {
-            background-color: var(--primary-color);
-            transform: translateY(-2px);
-        }
-        
-        /* Footer común */
         .footer {
             background-color: var(--dark-color);
             color: white;
-            padding: 1.25rem;
+            padding: 2rem;
             text-align: center;
-            border-bottom-left-radius: 15px;
-            border-bottom-right-radius: 15px;
         }
         
         .footer i {
@@ -302,94 +259,375 @@
         .fa-whatsapp {
             color: var(--whatsapp-color);
         }
-
-        /* Responsive */
-        @media (max-width: 576px) {
-            .logo-img {
-                max-height: 100px;
-            }
-            
-            .welcome-section, .menu-header {
-                padding: 1.5rem;
-            }
-            
-            .category-btn, .menu-section {
-                padding: 0.8rem 1.2rem;
-                font-size: 0.95rem;
-            }
-            
-            .category-btn {
-                min-width: 160px;
-            }
-            
-            .menu-item {
-                flex-direction: column;
-            }
-            
-            .item-price {
-                margin-left: 0;
-                margin-top: 0.5rem;
-            }
+        
+        .logo-img {
+            max-height: 120px;
+            width: auto;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+            margin-bottom: 2rem;
         }
+        
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--dark-color);
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-20px);}
+            60% {transform: translateY(-10px);}
+        }
+        
+ /* Responsive Design */
+@media (min-width: 768px) {
+    .menu-item {
+        flex-direction: row;
+        max-height: 200px;
+    }
+    
+    .item-image-container {
+        width: 40%;
+        max-height: 200px;
+    }
+    
+    .item-image {
+        height: 100%;
+        max-height: none;
+    }
+    
+    .item-content {
+        width: 60%;
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .item-image {
+        max-height: 180px;
+    }
+    
+    .item-content {
+        flex-direction: column;
+    }
+    
+    .item-price {
+        margin-top: 0.5rem;
+        align-self: flex-end;
+    }
+}
     </style>
 </head>
 <body>
-    <div class="container py-4">
-        <div class="row justify-content-center">
-            <div class="col-12">
-                <div class="menu-container">
-                    <!-- 1. Logo -->
-                 <div class="logo-container">
-                    <a href="index.html" style="display: inline-block;">
-                        <img src="/Users/alanjimenez/Documents/Michi Crunch/Web/img/Michi Crunch_logo.jpeg" 
-                            alt="Michi Crunch" 
-                            class="logo-img"
-                            loading="lazy">
-                    </a>
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="#inicio">
+                <img src="/Users/alanjimenez/Documents/Michi Crunch/Web/img/Michi Crunch_logo.jpeg" 
+                     alt="Michi Crunch" 
+                     height="70">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#inicio">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#snacks">Snacks</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#bebidas">Bebidas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#banderillas">Banderillas</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección de Inicio -->
+    <section id="inicio" class="section">
+        <div class="container text-center">
+            <img src="/Users/alanjimenez/Documents/Michi Crunch/Web/img/Michi Crunch_logo.jpeg" 
+                 alt="Michi Crunch" 
+                 class="logo-img">
+            <h1 class="display-4 fw-bold mb-3">Michi Crunch</h1>
+            <p class="lead mb-5">Deliciosos snacks para disfrutar en cualquier momento</p>
+            
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="d-flex flex-wrap justify-content-center gap-3">
+                        <a href="#snacks" class="btn btn-lg btn-outline-primary rounded-pill px-4">
+                            <i class="fas fa-utensils me-2"></i>Snacks
+                        </a>
+                        <a href="#bebidas" class="btn btn-lg btn-outline-primary rounded-pill px-4">
+                            <i class="fas fa-glass-water me-2"></i>Bebidas
+                        </a>
+                        <a href="#banderillas" class="btn btn-lg btn-outline-primary rounded-pill px-4">
+                            <i class="fas fa-drumstick-bite me-2"></i>Banderillas
+                        </a>
+                    </div>
                 </div>
+            </div>
+            
+            <div class="scroll-indicator">
+                <i class="fas fa-chevron-down fa-2x"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Snacks -->
+    <section id="snacks" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nuestros Snacks</h2>
+                <p>Crujientes y llenos de sabor para satisfacer tus antojos</p>
+            </div>
+            
+            <div class="menu-container">
+                <div class="menu-header header-snacks">
+                    <h1><i class="fas fa-utensils me-2"></i>Snacks Michi Crunch</h1>
+                </div>
+                
+                <div class="menu-section p-4">
+                    <div class="menu-category">
+                        <div class="category-title">
+                            <i class="fas fa-fire"></i>
+                            <h2>Especialidades</h2>
+                        </div>
+                        
+                     <div class="menu-item">
+    
+    <!-- Alimentos -->
+    <!-- Contenedor de imagen responsive Papas -->
+    <div class="item-image-container">
+        <img src="/Users/alanjimenez/Documents/Michi Crunch/Web 2/img/Alimentos/Michi Crispy.jpg" 
+             alt="Michi Crispy" 
+             class="item-image"
+             loading="lazy">
+    </div>
+    
+    <!-- Contenido del ítem -->
+        <div class="item-content">
+            <div class="item-info">
+                <h3 class="item-name">Michi Crispy</h3>
+                     <p class="item-description">Papas a la francesa extra crujientes, finas y elegantes como los bigotes de un gato siamés. Acompáñalas con nuestros dips</p>
+                    <span class="item-badge">Recomendado</span>
+            </div>
+                <div class="item-price">$55</div>
+                </div>
+        </div>
+
+    <!-- Contenedor de imagen responsive Dedos de Queso-->
+    <div class="item-image-container">
+        <img src="/Users/alanjimenez/Documents/Michi Crunch/Web 2/img/Alimentos/comp-dedos-de-queso.webp" 
+             alt="Michi Crispy" 
+             class="item-image"
+             loading="lazy">
+        </div>
+        <div class="item-content">
+            <div class="item-info">
+                <h3 class="item-name">Patitas de Queso</h3>
+                     <p class="item-description">Orden de 6 Dedos de queso fundido empanizados, listos para sumergirse en 'Arañazos de nuestros dips</p>
+                    <span class="item-badge">Crujiente</span>
+            </div>
+                <div class="item-price">$60</div>
+                </div>
+        </div>
+<!-- Contenedor de imagen responsive Aros de Cebolla-->
+    <div class="item-image-container">
+        <img src="/Users/alanjimenez/Documents/Michi Crunch/Web 2/img/Alimentos/Boneles Alitas.jpg" 
+             alt="Michi Crispy" 
+             class="item-image"
+             loading="lazy">
+        </div>
+        <div class="item-content">
+            <div class="item-info">
+                <h3 class="item-name">Boneless y Alitas</h3>
+                     <p class="item-description">Empanizado extra crocante (como las orejas alertas de un gato) y jugosidad al 100% (¡nada de pollo seco!). Cada bocado viene bañado en nuestras salsas con personalidad gatuna, desde el picante diabólico hasta los sabores frutales que harán vibrar tus bigotes.</p>
+                    <span class="item-badge">Más solicitado</span>
+            </div>
+                <div class="item-price">$60</div>
+            </div>
+        </div>       
+        
+        
                     
-                    <!-- 2. Mensaje de bienvenida -->
-                    <div class="welcome-section">
-                        <h2>¡Bienvenido a Michi Crunch!</h2>
-                        <p class="lead">Deliciosos snacks para disfrutar en cualquier momento</p>
-                        <img src="imagen-promocional.jpg" 
-                             alt="Promoción Michi Crunch" 
-                             class="img-fluid"
-                             loading="lazy">
-                    </div>
-                    
-                    <!-- 3. Botones de categorías con efecto de pulso -->
-                     <div class="category-buttons">
-                        <a href="snacks.html" class="category-btn btn-snacks pulse">
-                            <i class="fas fa-burger"></i> Snacks
-                        </a>
-                        <a href="bebidas.html" class="category-btn btn-bebidas pulse">
-                            <i class="fas fa-glass-water"></i> Sodas Italianas
-                        </a>
-                        <a href="Banderillas.html" class="category-btn btn-postres pulse">
-                            <i class="fas fa-drumstick-bite"></i> Banderillas Coreanas
-                        </a>
-                    </div>
-                    
-                    <!-- 4. Footer -->
-                    <div class="footer">
-                        <h5>¡Visítanos o haz tu pedido!</h5>
-                        <p class="mb-1">
-                            <i class="fas fa-map-marker-alt me-2"></i>
-                            <span class="map-link" onclick="openGoogleMaps()">Ver Ubicación</span>
-                        </p>
-                        <p class="mb-1">
-                            <i class="fab fa-whatsapp me-2"></i>
-                            <span class="wa-link" onclick="openWhatsApp()">56 5436 2947</span>
-                        </p>
-                        <p class="mb-0">
-                            <i class="fas fa-clock me-2"></i>Jueves y Viernes 7:00pm - 11:00pm
-                        </p>
+                    <div class="menu-category">
+                        <div class="category-title">
+                            <i class="fas fa-star"></i>
+                            <h2>Combos</h2>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h3 class="item-name">Combo Coreano</h3>
+                                <p class="item-description">Tteokbokki + Kimbap + Bebida</p>
+                                <span class="item-badge">Ahorra $20</span>
+                            </div>
+                            <div class="item-price">$150</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <!-- Sección de Bebidas -->
+    <section id="bebidas" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Bebidas Refrescantes</h2>
+                <p>Perfectas para acompañar tus snacks</p>
+            </div>
+            
+            <div class="menu-container">
+                <div class="menu-header header-bebidas">
+                    <h1><i class="fas fa-glass-water me-2"></i>Bebidas</h1>
+                </div>
+                
+                <div class="menu-section p-4">
+                    <div class="menu-category">
+                        <div class="category-title">
+                            <i class="fas fa-glass-martini-alt"></i>
+                            <h2>Mojitos 1L</h2>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h3 class="item-name">Mojito Mango</h3>
+                                <p class="item-description">Dulzura tropical del mango con hierbabuena</p>
+                                <span class="item-badge">Más vendido</span>
+                            </div>
+                            <div class="item-price">$90</div>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h3 class="item-name">Mojito Tradicional</h3>
+                                <p class="item-description">Clásico con limón verde y hierbabuena</p>
+                            </div>
+                            <div class="item-price">$90</div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-category">
+                        <div class="category-title">
+                            <i class="fas fa-glass-water"></i>
+                            <h2>Sodas Italianas</h2>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h3 class="item-name">Soda Manzana Verde</h3>
+                                <p class="item-description">Notas ácidas y refrescantes</p>
+                            </div>
+                            <div class="item-price">$45</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Banderillas -->
+    <section id="banderillas" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Banderillas Coreanas</h2>
+                <p>Deliciosas brochetas con sabores únicos</p>
+            </div>
+            
+            <div class="menu-container">
+                <div class="menu-header header-banderillas">
+                    <h1><i class="fas fa-drumstick-bite me-2"></i>Banderillas</h1>
+                </div>
+                
+                <div class="menu-section p-4">
+                    <div class="menu-category">
+                        <div class="category-title">
+                            <i class="fas fa-fire"></i>
+                            <h2>Nuestras Banderillas</h2>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h3 class="item-name">Queso Cheddar</h3>
+                                <p class="item-description">Deliciosa banderilla con queso cheddar derretido</p>
+                            </div>
+                            <div class="item-price">$45</div>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h3 class="item-name">Jalapeño Cheddar</h3>
+                                <p class="item-description">Queso cheddar con jalapeño</p>
+                                <span class="item-badge">Picante</span>
+                            </div>
+                            <div class="item-price">$45</div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-category">
+                        <div class="category-title">
+                            <i class="fas fa-star"></i>
+                            <h2>Combos</h2>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h3 class="item-name">Combo 3 Banderillas</h3>
+                                <p class="item-description">Elige 3 sabores de nuestras banderillas</p>
+                                <span class="item-badge">Ahorra $35</span>
+                            </div>
+                            <div class="item-price">$100</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <img src="/Users/alanjimenez/Documents/Michi Crunch/Web/img/Michi Crunch_logo.jpeg" 
+                         alt="Michi Crunch" 
+                         height="80"
+                         class="mb-3">
+                    <p>Deliciosos snacks coreanos para disfrutar en cualquier momento</p>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>Horario</h5>
+                    <p><i class="fas fa-clock me-2"></i>Jueves y Viernes</p>
+                    <p>7:00pm - 11:00pm</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contacto</h5>
+                    <p class="mb-1">
+                        <i class="fas fa-map-marker-alt me-2"></i>
+                        <span class="map-link" onclick="openGoogleMaps()">Ernesto Cortazar Mz86LT602</span>
+                    </p>
+                    <p class="mb-1">
+                        <i class="fab fa-whatsapp me-2"></i>
+                        <span class="wa-link" onclick="openWhatsApp()">56 5436 2947</span>
+                    </p>
+                </div>
+            </div>
+            <hr class="my-4" style="border-color: rgba(255,255,255,0.1);">
+            <p class="mb-0">&copy; 2023 Michi Crunch. Todos los derechos reservados.</p>
+        </div>
+    </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -406,21 +644,41 @@
             window.open(url, '_blank');
         }
         
-        // Efecto de pulso aleatorio para los botones
-        document.addEventListener('DOMContentLoaded', function() {
-            const buttons = document.querySelectorAll('.category-btn');
+        // Cambiar clase activa en la navegación al hacer scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
             
-            buttons.forEach(btn => {
-                // Pulsación aleatoria entre 1.5s y 3s
-                const randomDelay = Math.random() * 1.5 + 1.5;
-                btn.style.animationDelay = `${randomDelay}s`;
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
                 
-                btn.addEventListener('mouseenter', function() {
-                    this.classList.remove('pulse');
+                if (pageYOffset >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // Efecto hover para los ítems del menú
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuItems = document.querySelectorAll('.menu-item');
+            
+            menuItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.borderBottomColor = 'var(--primary-color)';
                 });
                 
-                btn.addEventListener('mouseleave', function() {
-                    this.classList.add('pulse');
+                item.addEventListener('mouseleave', function() {
+                    this.style.borderBottomColor = '#ddd';
                 });
             });
             
