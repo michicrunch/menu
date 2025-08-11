@@ -151,8 +151,7 @@
             color: var(--primary-color);
         }
         
-        
-            .menu-item {
+        .menu-item {
             display: flex;
             flex-direction: column;
             margin-bottom: 1.5rem;
@@ -180,11 +179,11 @@
              transform: scale(1.05);
         }
 
-            .item-content {
-                padding: 1.2rem;
-                display: flex;
-                justify-content: space-between;
-                align-items: flex-start;
+        .item-content {
+            padding: 1.2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
         }
         
         .item-info {
@@ -193,35 +192,97 @@
         }
         
         .item-name {
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: var(--dark-color);
-    font-size: 1.1rem;
-}
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--dark-color);
+            font-size: 1.1rem;
+        }
 
-.item-description {
-    font-size: 0.9rem;
-    color: #666;
-    margin-bottom: 0.5rem;
-    line-height: 1.5;
-}
+        .item-description {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+            line-height: 1.5;
+        }
 
-.item-badge {
-    display: inline-block;
-    background-color: var(--accent-color);
-    color: #333;
-    padding: 0.25rem 0.75rem;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: 600;
-}
+        .item-badge {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: #333;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
 
-.item-price {
-    font-weight: 700;
-    color: var(--primary-color);
-    white-space: nowrap;
-    font-size: 1.1rem;
-}
+        .item-price {
+            font-weight: 700;
+            color: var(--primary-color);
+            white-space: nowrap;
+            font-size: 1.1rem;
+        }
+        
+        /* Nueva sección de salsas */
+        .sauces-section {
+            background-color: rgba(255, 190, 11, 0.1);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            border: 1px dashed var(--accent-color);
+        }
+        
+        .sauce-item {
+            display: flex;
+            align-items: center;
+            padding: 0.5rem;
+            margin-bottom: 0.5rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .sauce-item:hover {
+            background-color: rgba(255, 190, 11, 0.2);
+        }
+        
+        .sauce-icon {
+            margin-right: 1rem;
+            color: var(--primary-color);
+            width: 25px;
+            text-align: center;
+        }
+        
+        /* Tabla de precios */
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .pricing-table th {
+            background-color: var(--accent-color);
+            color: #333;
+            font-weight: 700;
+            padding: 0.75rem;
+            text-align: center;
+        }
+        
+        .pricing-table td {
+            padding: 0.75rem;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .pricing-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .pricing-table tr:last-child td {
+            border-bottom: none;
+        }
         
         .footer {
             background-color: var(--dark-color);
@@ -283,43 +344,43 @@
             60% {transform: translateY(-10px);}
         }
         
- /* Responsive Design */
-@media (min-width: 768px) {
-    .menu-item {
-        flex-direction: row;
-        max-height: 200px;
-    }
-    
-    .item-image-container {
-        width: 40%;
-        max-height: 200px;
-    }
-    
-    .item-image {
-        height: 100%;
-        max-height: none;
-    }
-    
-    .item-content {
-        width: 60%;
-        padding: 1.5rem;
-    }
-}
+        /* Responsive Design */
+        @media (min-width: 768px) {
+            .menu-item {
+                flex-direction: row;
+                max-height: 200px;
+            }
+            
+            .item-image-container {
+                width: 40%;
+                max-height: 200px;
+            }
+            
+            .item-image {
+                height: 100%;
+                max-height: none;
+            }
+            
+            .item-content {
+                width: 60%;
+                padding: 1.5rem;
+            }
+        }
 
-@media (max-width: 576px) {
-    .item-image {
-        max-height: 180px;
-    }
-    
-    .item-content {
-        flex-direction: column;
-    }
-    
-    .item-price {
-        margin-top: 0.5rem;
-        align-self: flex-end;
-    }
-}
+        @media (max-width: 576px) {
+            .item-image {
+                max-height: 180px;
+            }
+            
+            .item-content {
+                flex-direction: column;
+            }
+            
+            .item-price {
+                margin-top: 0.5rem;
+                align-self: flex-end;
+            }
+        }
     </style>
 </head>
 <body>
@@ -327,7 +388,7 @@
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
             <a class="navbar-brand" href="#inicio">
-                <img src="/Users/alanjimenez/Documents/Michi Crunch/Web/img/Michi Crunch_logo.jpeg" 
+                <img src="https://via.placeholder.com/150x70?text=Michi+Crunch" 
                      alt="Michi Crunch" 
                      height="70">
             </a>
@@ -356,7 +417,7 @@
     <!-- Sección de Inicio -->
     <section id="inicio" class="section">
         <div class="container text-center">
-            <img src="/Users/alanjimenez/Documents/Michi Crunch/Web/img/Michi Crunch_logo.jpeg" 
+            <img src="https://via.placeholder.com/300x150?text=Michi+Crunch" 
                  alt="Michi Crunch" 
                  class="logo-img">
             <h1 class="display-4 fw-bold mb-3">Michi Crunch</h1>
@@ -404,62 +465,123 @@
                             <h2>Especialidades</h2>
                         </div>
                         
-                     <div class="menu-item">
-    
-    <!-- Alimentos -->
-    <!-- Contenedor de imagen responsive Papas -->
-    <div class="item-image-container">
-        <img src="/Users/alanjimenez/Documents/Michi Crunch/Web 2/img/Alimentos/Michi Crispy.jpg" 
-             alt="Michi Crispy" 
-             class="item-image"
-             loading="lazy">
-    </div>
-    
-    <!-- Contenido del ítem -->
-        <div class="item-content">
-            <div class="item-info">
-                <h3 class="item-name">Michi Crispy</h3>
-                     <p class="item-description">Papas a la francesa extra crujientes, finas y elegantes como los bigotes de un gato siamés. Acompáñalas con nuestros dips</p>
-                    <span class="item-badge">Recomendado</span>
-            </div>
-                <div class="item-price">$55</div>
-                </div>
-        </div>
+                        <!-- Michi Crispy -->
+                        <div class="menu-item">
+                            <div class="item-image-container">
+                                <img src="https://github.com/michicrunch/menu/tree/main/img/Alimentos/Michi Crispy.jpg" 
+                                     alt="Michi Crispy" 
+                                     class="item-image"
+                                     loading="lazy">
+                            </div>
+                            
+                            <div class="item-content">
+                                <div class="item-info">
+                                    <h3 class="item-name">Michi Crispy</h3>
+                                    <p class="item-description">Papas a la francesa extra crujientes, finas y elegantes como los bigotes de un gato siamés. Acompáñalas con nuestros dips</p>
+                                    <span class="item-badge">Recomendado</span>
+                                </div>
+                                <div class="item-price">$55</div>
+                            </div>
+                        </div>
 
-    <!-- Contenedor de imagen responsive Dedos de Queso-->
-    <div class="item-image-container">
-        <img src="/Users/alanjimenez/Documents/Michi Crunch/Web 2/img/Alimentos/comp-dedos-de-queso.webp" 
-             alt="Michi Crispy" 
-             class="item-image"
-             loading="lazy">
-        </div>
-        <div class="item-content">
-            <div class="item-info">
-                <h3 class="item-name">Patitas de Queso</h3>
-                     <p class="item-description">Orden de 6 Dedos de queso fundido empanizados, listos para sumergirse en 'Arañazos de nuestros dips</p>
-                    <span class="item-badge">Crujiente</span>
-            </div>
-                <div class="item-price">$60</div>
-                </div>
-        </div>
-<!-- Contenedor de imagen responsive Aros de Cebolla-->
-    <div class="item-image-container">
-        <img src="/Users/alanjimenez/Documents/Michi Crunch/Web 2/img/Alimentos/Boneles Alitas.jpg" 
-             alt="Michi Crispy" 
-             class="item-image"
-             loading="lazy">
-        </div>
-        <div class="item-content">
-            <div class="item-info">
-                <h3 class="item-name">Boneless y Alitas</h3>
-                     <p class="item-description">Empanizado extra crocante (como las orejas alertas de un gato) y jugosidad al 100% (¡nada de pollo seco!). Cada bocado viene bañado en nuestras salsas con personalidad gatuna, desde el picante diabólico hasta los sabores frutales que harán vibrar tus bigotes.</p>
-                    <span class="item-badge">Más solicitado</span>
-            </div>
-                <div class="item-price">$60</div>
-            </div>
-        </div>       
-        
-        
+                        <!-- Patitas de Queso -->
+                        <div class="menu-item">
+                            <div class="item-image-container">
+                                <img src="https://images.unsplash.com/photo-1562967916-eb82221dfb92?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                                     alt="Patitas de Queso" 
+                                     class="item-image"
+                                     loading="lazy">
+                            </div>
+                            
+                            <div class="item-content">
+                                <div class="item-info">
+                                    <h3 class="item-name">Patitas de Queso</h3>
+                                    <p class="item-description">Orden de 6 Dedos de queso fundido empanizados, listos para sumergirse en 'Arañazos de nuestros dips</p>
+                                    <span class="item-badge">Crujiente</span>
+                                </div>
+                                <div class="item-price">$60</div>
+                            </div>
+                        </div>
+
+                        <!-- Boneless y Alitas -->
+                        <div class="menu-item">
+                            <div class="item-image-container">
+                                <img src="https://images.unsplash.com/photo-1567620832903-9fc6e53a2f25?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                                     alt="Boneless y Alitas" 
+                                     class="item-image"
+                                     loading="lazy">
+                            </div>
+                            
+                            <div class="item-content">
+                                <div class="item-info">
+                                    <h3 class="item-name">Boneless y Alitas</h3>
+                                    <p class="item-description">Empanizado extra crocante (como las orejas alertas de un gato) y jugosidad al 100% (¡nada de pollo seco!). Cada bocado viene bañado en nuestras salsas con personalidad gatuna, desde el picante diabólico hasta los sabores frutales que harán vibrar tus bigotes.</p>
+                                    <span class="item-badge">Más solicitado</span>
+                                </div>
+                                <div class="item-price">$60</div>
+                            </div>
+                            
+                            <!-- Tabla de precios para boneless/alitas -->
+                            <div class="w-100 p-3">
+                                <table class="pricing-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Piezas</th>
+                                            <th>Precio</th>
+                                            <th>Salsas Incluidas</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>6 Piezas</td>
+                                            <td>$75</td>
+                                            <td>1 Salsa</td>
+                                        </tr>
+                                        <tr>
+                                            <td>10 Piezas</td>
+                                            <td>$110</td>
+                                            <td>2 Salsas</td>
+                                        </tr>
+                                        <tr>
+                                            <td>15 Piezas</td>
+                                            <td>$150</td>
+                                            <td>+ 2 Salsas</td>
+                                        </tr>
+                                        <tr>
+                                            <td>20 Piezas</td>
+                                            <td>$210</td>
+                                            <td>+ 3 Salsas</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <!-- Sección de salsas -->
+                            <div class="sauces-section mt-3">
+                                <h4 class="text-center mb-3"><i class="fas fa-pepper-hot me-2"></i>Nuestras Salsas</h4>
+                                <div class="sauce-item">
+                                    <div class="sauce-icon"><i class="fas fa-pepper-hot"></i></div>
+                                    <div>Michi Fuego (Mango Habanero)</div>
+                                </div>
+                                <div class="sauce-item">
+                                    <div class="sauce-icon"><i class="fas fa-fire"></i></div>
+                                    <div>Michi Hot (Buffalo)</div>
+                                </div>
+                                <div class="sauce-item">
+                                    <div class="sauce-icon"><i class="fas fa-utensils"></i></div>
+                                    <div>Mochi BBQ (Receta Original BBQ)</div>
+                                </div>
+                                <div class="sauce-item">
+                                    <div class="sauce-icon"><i class="fas fa-lemon"></i></div>
+                                    <div>Lemon Pepper</div>
+                                </div>
+                                <div class="sauce-item">
+                                    <div class="sauce-icon"><i class="fas fa-berry"></i></div>
+                                    <div>Frutos Rojos</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     
                     <div class="menu-category">
                         <div class="category-title">
@@ -468,12 +590,14 @@
                         </div>
                         
                         <div class="menu-item">
-                            <div class="item-info">
-                                <h3 class="item-name">Combo Coreano</h3>
-                                <p class="item-description">Tteokbokki + Kimbap + Bebida</p>
-                                <span class="item-badge">Ahorra $20</span>
+                            <div class="item-content">
+                                <div class="item-info">
+                                    <h3 class="item-name">Combo Coreano</h3>
+                                    <p class="item-description">Tteokbokki + Kimbap + Bebida</p>
+                                    <span class="item-badge">Ahorra $20</span>
+                                </div>
+                                <div class="item-price">$150</div>
                             </div>
-                            <div class="item-price">$150</div>
                         </div>
                     </div>
                 </div>
@@ -502,20 +626,24 @@
                         </div>
                         
                         <div class="menu-item">
-                            <div class="item-info">
-                                <h3 class="item-name">Mojito Mango</h3>
-                                <p class="item-description">Dulzura tropical del mango con hierbabuena</p>
-                                <span class="item-badge">Más vendido</span>
+                            <div class="item-content">
+                                <div class="item-info">
+                                    <h3 class="item-name">Mojito Mango</h3>
+                                    <p class="item-description">Dulzura tropical del mango con hierbabuena</p>
+                                    <span class="item-badge">Más vendido</span>
+                                </div>
+                                <div class="item-price">$90</div>
                             </div>
-                            <div class="item-price">$90</div>
                         </div>
                         
                         <div class="menu-item">
-                            <div class="item-info">
-                                <h3 class="item-name">Mojito Tradicional</h3>
-                                <p class="item-description">Clásico con limón verde y hierbabuena</p>
+                            <div class="item-content">
+                                <div class="item-info">
+                                    <h3 class="item-name">Mojito Tradicional</h3>
+                                    <p class="item-description">Clásico con limón verde y hierbabuena</p>
+                                </div>
+                                <div class="item-price">$90</div>
                             </div>
-                            <div class="item-price">$90</div>
                         </div>
                     </div>
                     
@@ -526,11 +654,13 @@
                         </div>
                         
                         <div class="menu-item">
-                            <div class="item-info">
-                                <h3 class="item-name">Soda Manzana Verde</h3>
-                                <p class="item-description">Notas ácidas y refrescantes</p>
+                            <div class="item-content">
+                                <div class="item-info">
+                                    <h3 class="item-name">Soda Manzana Verde</h3>
+                                    <p class="item-description">Notas ácidas y refrescantes</p>
+                                </div>
+                                <div class="item-price">$45</div>
                             </div>
-                            <div class="item-price">$45</div>
                         </div>
                     </div>
                 </div>
@@ -559,20 +689,24 @@
                         </div>
                         
                         <div class="menu-item">
-                            <div class="item-info">
-                                <h3 class="item-name">Queso Cheddar</h3>
-                                <p class="item-description">Deliciosa banderilla con queso cheddar derretido</p>
+                            <div class="item-content">
+                                <div class="item-info">
+                                    <h3 class="item-name">Queso Cheddar</h3>
+                                    <p class="item-description">Deliciosa banderilla con queso cheddar derretido</p>
+                                </div>
+                                <div class="item-price">$45</div>
                             </div>
-                            <div class="item-price">$45</div>
                         </div>
                         
                         <div class="menu-item">
-                            <div class="item-info">
-                                <h3 class="item-name">Jalapeño Cheddar</h3>
-                                <p class="item-description">Queso cheddar con jalapeño</p>
-                                <span class="item-badge">Picante</span>
+                            <div class="item-content">
+                                <div class="item-info">
+                                    <h3 class="item-name">Jalapeño Cheddar</h3>
+                                    <p class="item-description">Queso cheddar con jalapeño</p>
+                                    <span class="item-badge">Picante</span>
+                                </div>
+                                <div class="item-price">$45</div>
                             </div>
-                            <div class="item-price">$45</div>
                         </div>
                     </div>
                     
@@ -583,12 +717,14 @@
                         </div>
                         
                         <div class="menu-item">
-                            <div class="item-info">
-                                <h3 class="item-name">Combo 3 Banderillas</h3>
-                                <p class="item-description">Elige 3 sabores de nuestras banderillas</p>
-                                <span class="item-badge">Ahorra $35</span>
+                            <div class="item-content">
+                                <div class="item-info">
+                                    <h3 class="item-name">Combo 3 Banderillas</h3>
+                                    <p class="item-description">Elige 3 sabores de nuestras banderillas</p>
+                                    <span class="item-badge">Ahorra $35</span>
+                                </div>
+                                <div class="item-price">$100</div>
                             </div>
-                            <div class="item-price">$100</div>
                         </div>
                     </div>
                 </div>
@@ -601,9 +737,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4 mb-4 mb-md-0">
-                    <img src="/Users/alanjimenez/Documents/Michi Crunch/Web/img/Michi Crunch_logo.jpeg" 
+                    <img src="https://via.placeholder.com/150x80?text=Michi+Crunch" 
                          alt="Michi Crunch" 
-                         height="80"
                          class="mb-3">
                     <p>Deliciosos snacks coreanos para disfrutar en cualquier momento</p>
                 </div>
@@ -668,21 +803,8 @@
             });
         });
         
-        // Efecto hover para los ítems del menú
+        // Eventos para accesibilidad
         document.addEventListener('DOMContentLoaded', function() {
-            const menuItems = document.querySelectorAll('.menu-item');
-            
-            menuItems.forEach(item => {
-                item.addEventListener('mouseenter', function() {
-                    this.style.borderBottomColor = 'var(--primary-color)';
-                });
-                
-                item.addEventListener('mouseleave', function() {
-                    this.style.borderBottomColor = '#ddd';
-                });
-            });
-            
-            // Eventos para accesibilidad
             document.querySelectorAll('.map-link, .wa-link').forEach(link => {
                 link.addEventListener('keypress', function(e) {
                     if (e.key === 'Enter') {
