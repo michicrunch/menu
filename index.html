@@ -17,8 +17,8 @@
             --accent-color: #FFBE0B;
             --whatsapp-color: #25D366;
             --snacks-color: #FFA500;
-            --drinks-color: #FFA500;
-            --banderillas-color: #FFA500;
+            --drinks-color: #4ECDC4;
+            --banderillas-color: #FF6B6B;
         }
         
         body {
@@ -284,6 +284,103 @@
             border-bottom: none;
         }
         
+        /* Estilos para banderillas */
+        .flavor-item {
+            display: flex;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            background: white;
+        }
+        
+        .flavor-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .flavor-image {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+        
+        .flavor-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .flavor-name {
+            font-weight: bold;
+            font-size: 1.4rem;
+            color: #ff6b6b;
+            margin-bottom: 0.5rem;
+        }
+        
+        .flavor-description {
+            color: #666;
+            line-height: 1.5;
+            margin-bottom: 0.75rem;
+        }
+        
+        .flavor-type {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            background-color: #ffecec;
+            color: #ff6b6b;
+            margin-bottom: 0.5rem;
+        }
+        
+        .flavor-price {
+            font-weight: 700;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
+        }
+        
+        .classic { border-left: 5px solid #4cd7d0; }
+        .jalapeno { border-left: 5px solid #77dd77; }
+        .cheddar { border-left: 5px solid #ffd700; }
+        .flamin { border-left: 5px solid #ff4500; }
+        .ramen { border-left: 5px solid #ff9e1b; }
+        
+        .combo-section {
+            background-color: rgba(255, 190, 11, 0.1);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            text-align: center;
+        }
+        
+        .combo-title {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+        
+        .combo-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .combo-saving {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: #333;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+        
         .footer {
             background-color: var(--dark-color);
             color: white;
@@ -367,7 +464,20 @@
             }
         }
 
-        @media (max-width: 576px) {
+        @media (max-width: 768px) {
+            .flavor-item {
+                flex-direction: column;
+            }
+            
+            .flavor-image {
+                width: 100%;
+                height: 200px;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
             .item-image {
                 max-height: 180px;
             }
@@ -380,6 +490,45 @@
                 margin-top: 0.5rem;
                 align-self: flex-end;
             }
+            
+            .pricing-table {
+                font-size: 0.85rem;
+            }
+            
+            .pricing-table th, 
+            .pricing-table td {
+                padding: 0.5rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .section {
+                padding: 80px 0;
+            }
+            
+            .menu-header h1 {
+                font-size: 1.5rem;
+            }
+            
+            .category-title h2 {
+                font-size: 1.3rem;
+            }
+            
+            .item-name {
+                font-size: 1rem;
+            }
+            
+            .item-description {
+                font-size: 0.8rem;
+            }
+            
+            .flavor-name {
+                font-size: 1.2rem;
+            }
+            
+            .flavor-content {
+                padding: 1rem;
+            }
         }
     </style>
 </head>
@@ -389,7 +538,6 @@
         <div class="container">
             <a class="navbar-brand" href="#inicio">
                 <img src="img/Michi Crunch_logo.jpeg" 
-
                      alt="Michi Crunch" 
                      height="70">
             </a>
@@ -427,13 +575,13 @@
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <div class="d-flex flex-wrap justify-content-center gap-3">
-                        <a href="#snacks" class="btn btn-lg btn-outline-primary rounded-pill px-4">
+                        <a href="#snacks" class="btn btn-lg btn-primary rounded-pill px-4">
                             <i class="fas fa-utensils me-2"></i>Snacks
                         </a>
-                        <a href="#bebidas" class="btn btn-lg btn-outline-primary rounded-pill px-4">
+                        <a href="#bebidas" class="btn btn-lg btn-primary rounded-pill px-4">
                             <i class="fas fa-glass-water me-2"></i>Bebidas
                         </a>
-                        <a href="#banderillas" class="btn btn-lg btn-outline-primary rounded-pill px-4">
+                        <a href="#banderillas" class="btn btn-lg btn-primary rounded-pill px-4">
                             <i class="fas fa-drumstick-bite me-2"></i>Banderillas
                         </a>
                     </div>
@@ -474,7 +622,6 @@
                                      class="item-image"
                                      loading="lazy">
                             </div>
-                    
                             <div class="item-content">
                                 <div class="item-info">
                                     <h3 class="item-name">Michi Crispy</h3>
@@ -489,16 +636,14 @@
                         <div class="menu-item">
                             <div class="item-image-container">
                                 <img src="img/Alimentos/comp-dedos-de-queso.webp" 
-
                                      alt="Patitas de Queso" 
                                      class="item-image"
                                      loading="lazy">
                             </div>
-                            
                             <div class="item-content">
                                 <div class="item-info">
                                     <h3 class="item-name">Patitas de Queso</h3>
-                                    <p class="item-description">Orden de 6 Dedos de queso fundido empanizados, listos para sumergirse en 'Arañazos de nuestros dips</p>
+                                    <p class="item-description">Orden de 6 Dedos de queso fundido empanizados, listos para sumergirse en nuestros dips</p>
                                     <span class="item-badge">Crujiente</span>
                                 </div>
                                 <div class="item-price">$60</div>
@@ -513,97 +658,73 @@
                                      class="item-image"
                                      loading="lazy">
                             </div>
-                            
                             <div class="item-content">
                                 <div class="item-info">
                                     <h3 class="item-name">Boneless y Alitas</h3>
-                                    <p class="item-description">Empanizado extra crocante (como las orejas alertas de un gato) y jugosidad al 100% (¡nada de pollo seco!). Cada bocado viene bañado en nuestras salsas con personalidad gatuna, desde el picante diabólico hasta los sabores frutales que harán vibrar tus bigotes.</p>
+                                    <p class="item-description">Empanizado extra crocante y jugosidad al 100%. Cada bocado viene bañado en nuestras salsas con personalidad gatuna.</p>
                                     <span class="item-badge">Más solicitado</span>
                                 </div>
-                                <div class="item-price">$60</div>
-                            </div>
-                            
-                            <!-- Tabla de precios para boneless/alitas -->
-                            <div class="w-100 p-3">
-                                <table class="pricing-table">
-                                    <thead>
-                                        <tr>
-                                            <th>Piezas</th>
-                                            <th>Precio</th>
-                                            <th>Salsas Incluidas</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>6 Piezas</td>
-                                            <td>$75</td>
-                                            <td>1 Salsa</td>
-                                        </tr>
-                                        <tr>
-                                            <td>10 Piezas</td>
-                                            <td>$110</td>
-                                            <td>2 Salsas</td>
-                                        </tr>
-                                        <tr>
-                                            <td>15 Piezas</td>
-                                            <td>$150</td>
-                                            <td>+ 2 Salsas</td>
-                                        </tr>
-                                        <tr>
-                                            <td>20 Piezas</td>
-                                            <td>$210</td>
-                                            <td>+ 3 Salsas</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            
-                            <!-- Sección de salsas -->
-                            <div class="sauces-section mt-3">
-                                <h4 class="text-center mb-3"><i class="fas fa-pepper-hot me-2"></i>Nuestras Salsas</h4>
-                                <div class="sauce-item">
-                                    <div class="sauce-icon"><i class="fas fa-pepper-hot"></i></div>
-                                    <div>Michi Fuego (Mango Habanero)</div>
-                                </div>
-                                <div class="sauce-item">
-                                    <div class="sauce-icon"><i class="fas fa-fire"></i></div>
-                                    <div>Michi Hot (Buffalo)</div>
-                                </div>
-                                <div class="sauce-item">
-                                    <div class="sauce-icon"><i class="fas fa-utensils"></i></div>
-                                    <div>Mochi BBQ (Receta Original BBQ)</div>
-                                </div>
-                                <div class="sauce-item">
-                                    <div class="sauce-icon"><i class="fas fa-lemon"></i></div>
-                                    <div>Lemon Pepper</div>
-                                </div>
-                                <div class="sauce-item">
-                                    <div class="sauce-icon"><i class="fas fa-berry"></i></div>
-                                    <div>Frutos Rojos</div>
-                                </div>
+                                <div class="item-price">Desde $85</div>
                             </div>
                         </div>
-                    </div>
-                    
-                    <div class="menu-category">
-                        <div class="category-title">
-                            <i class="fas fa-star"></i>
-                            <h2>Combos</h2>
+                            
+                        <!-- Price Table for Boneless/Alitas -->
+                        <div class="w-100 p-3">
+                            <table class="pricing-table">
+                                <thead>
+                                    <tr>
+                                        <th>Piezas</th>
+                                        <th>Precio</th>
+                                        <th>Salsas Incluidas</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>6 Piezas</td>
+                                        <td>$85</td>
+                                        <td>1 Salsa</td>
+                                    </tr>
+                                    <tr>
+                                        <td>10 Piezas</td>
+                                        <td>$125</td>
+                                        <td>2 Salsas</td>
+                                    </tr>
+                                    <tr>
+                                        <td>15 Piezas</td>
+                                        <td>$165</td>
+                                        <td>+ 2 Salsas</td>
+                                    </tr>
+                                    <tr>
+                                        <td>20 Piezas</td>
+                                        <td>$235</td>
+                                        <td>+ 3 Salsas</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
-                        
-                        <div class="menu-item">
-                            <div class="item-content">
-                                <div class="item-info">
-                                    <h3 class="item-name">Combo Michi </h3>
-                                    <p class="item-description">Alitas 6 Pz (1 Salsa) + Soda Italiana </p>
-                                    <span class="item-badge">Ahorra $20</span>
-                                </div>
-                                <div class="item-price">$125</div>
-                                    <h3 class="item-name">Combo Coreano</h3>
-                                    <p class="item-description">Tteokbokki + Kimbap + Bebida</p>
-                                    <span class="item-badge">Ahorra $20</span>
-                                </div>
-                                <div class="item-price">$150</div>
+    
+                        <!-- Sauces Section -->
+                        <div class="sauces-section mt-3">
+                            <h4 class="text-center mb-3"><i class="fas fa-pepper-hot me-2"></i>Nuestras Salsas</h4>
+                            <div class="sauce-item">
+                                <div class="sauce-icon"><i class="fas fa-pepper-hot"></i></div>
+                                <div>Michi Fuego (Mango Habanero)</div>
+                            </div>
+                            <div class="sauce-item">
+                                <div class="sauce-icon"><i class="fas fa-fire"></i></div>
+                                <div>Michi Hot (Buffalo)</div>
+                            </div>
+                            <div class="sauce-item">
+                                <div class="sauce-icon"><i class="fas fa-utensils"></i></div>
+                                <div>Mochi BBQ (Receta Original BBQ)</div>
+                            </div>
+                            <div class="sauce-item">
+                                <div class="sauce-icon"><i class="fas fa-lemon"></i></div>
+                                <div>Lemon Pepper</div>
+                            </div>
+                            <div class="sauce-item">
+                                <div class="sauce-icon"><i class="fas fa-berry"></i></div>
+                                <div>Frutos Rojos</div>
                             </div>
                         </div>
                     </div>
@@ -612,127 +733,267 @@
         </div>
     </section>
 
-    <!-- Sección de Bebidas -->
-    <section id="bebidas" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Bebidas Refrescantes</h2>
-                <p>Perfectas para acompañar tus snacks</p>
+   <!-- Sección de Bebidas -->
+<section id="bebidas" class="section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Bebidas Refrescantes</h2>
+            <p>Perfectas para acompañar tus snacks</p>
+        </div>
+        
+        <div class="menu-container">
+            <div class="menu-header header-bebidas">
+                <h1><i class="fas fa-glass-water me-2"></i>Bebidas</h1>
             </div>
             
-            <div class="menu-container">
-                <div class="menu-header header-bebidas">
-                    <h1><i class="fas fa-glass-water me-2"></i>Bebidas</h1>
-                </div>
-                
-                <div class="menu-section p-4">
-                    <div class="menu-category">
-                        <div class="category-title">
-                            <i class="fas fa-glass-martini-alt"></i>
-                            <h2>Mojitos 1L</h2>
+            <div class="menu-section p-4">
+                <!-- Categoría de Mojitos -->
+                <div class="menu-category">
+                    <div class="category-title">
+                        <i class="fas fa-glass-martini-alt"></i>
+                        <h2>Mojitos 1L</h2>
+                    </div>
+                    
+                   <!-- Mojito Frutos Rojos -->
+                    <div class="menu-item">
+                        <div class="item-image-container">
+                            <img src="img/Bebidas/Mojito Frutos Rojos.jpg" 
+                                 alt="Mojito Frutos Rojos" 
+                                 class="item-image"
+                                 loading="lazy">
                         </div>
-                        
-                        <div class="menu-item">
-                            <div class="item-content">
-                                <div class="item-info">
-                                    <h3 class="item-name">Mojito Mango</h3>
-                                    <p class="item-description">Dulzura tropical del mango con hierbabuena</p>
-                                    <span class="item-badge">Más vendido</span>
-                                </div>
-                                <div class="item-price">$90</div>
+                        <div class="item-content">
+                            <div class="item-info">
+                                <h3 class="item-name">Mojito Frutos Rojos</h3>
+                                <p class="item-description">¡La explosión de bayas que hará ronronear de gusto a tus bigotes! Moras, frambuesas y arándanos macerados con hierbabuena, limón y burbujas juguetonas.</p>
+                                <span class="item-badge">Recomendado</span>
                             </div>
-                        </div>
-                        
-                        <div class="menu-item">
-                            <div class="item-content">
-                                <div class="item-info">
-                                    <h3 class="item-name">Mojito Tradicional</h3>
-                                    <p class="item-description">Clásico con limón verde y hierbabuena</p>
-                                </div>
-                                <div class="item-price">$90</div>
-                            </div>
+                            <div class="item-price">$90</div>
                         </div>
                     </div>
                     
-                    <div class="menu-category">
-                        <div class="category-title">
-                            <i class="fas fa-glass-water"></i>
-                            <h2>Sodas Italianas</h2>
+                     
+                   <!-- Mojito Mango -->
+                    <div class="menu-item">
+                        <div class="item-image-container">
+                            <img src="img/Bebidas/mojito-de-mango.jpg" 
+                                 alt="Mojito de Mango" 
+                                 class="item-image"
+                                 loading="lazy">
                         </div>
-                        
-                        <div class="menu-item">
-                            <div class="item-content">
-                                <div class="item-info">
-                                    <h3 class="item-name">Soda Manzana Verde</h3>
-                                    <p class="item-description">Notas ácidas y refrescantes</p>
-                                </div>
-                                <div class="item-price">$45</div>
+                        <div class="item-content">
+                            <div class="item-info">
+                                <h3 class="item-name">Mojito Mango</h3>
+                                <p class="item-description">¡Un viaje tropical que despertará a tu felino interior! Mango dulce y jugoso mezclado con hierbabuena fresca, un toque de lima y burbujas divertidas.</p>
+                                <span class="item-badge">Recomendado</span>
                             </div>
+                            <div class="item-price">$90</div>
+                        </div>
+                    </div>
+
+                    <!-- Mojito Tradicional -->
+                    <div class="menu-item">
+                        <div class="item-image-container">
+                            <img src="img/Bebidas/Mojito Tradicional.jpg" 
+                                 alt="Mojito Tradicional" 
+                                 class="item-image"
+                                 loading="lazy">
+                        </div>
+                        <div class="item-content">
+                            <div class="item-info">
+                                <h3 class="item-name">Tradicional</h3>
+                                <p class="item-description">¡El clásico que siempre cae de patitas! La combinación perfecta de hierbabuena fresca, lima jugosa y un toque de dulce con burbujas alegres.</p>
+                                <span class="item-badge">Recomendado</span>
+                            </div>
+                            <div class="item-price">$90</div>
+                        </div>
+                    </div>
+
+                    <!-- Mojito Maracuyá -->
+                    <div class="menu-item">
+                        <div class="item-image-container">
+                            <img src="img/Bebidas/Mojito Maracuyá.jpg" 
+                                 alt="Mojito Maracuyá" 
+                                 class="item-image"
+                                 loading="lazy">
+                        </div>
+                        <div class="item-content">
+                            <div class="item-info">
+                                <h3 class="item-name">Maracuyá</h3>
+                                <p class="item-description">¡La aventura tropical que tu instinto felino necesitaba! Pura pasión frutal con el toque ácido y vibrante de la maracuyá, mezclado con hierbabuena fresca, lima y burbujas juguetonas.</p>
+                                <span class="item-badge">Recomendado</span>
+                            </div>
+                            <div class="item-price">$90</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Categoría de Sodas Italianas -->
+                <div class="menu-category">
+                    <div class="category-title">
+                        <i class="fas fa-glass-water"></i>
+                        <h2>Sodas Italianas</h2>
+                    </div>
+                    
+                    <!-- Soda Italiana Manzana Verde -->
+                    <div class="menu-item">
+                        <div class="item-image-container">
+                            <img src="img/Bebidas/Soda Manzana Verde.jpg" 
+                                 alt="Soda Manzana Verde" 
+                                 class="item-image"
+                                 loading="lazy">
+                        </div>
+                        <div class="item-content">
+                            <div class="item-info">
+                                <h3 class="item-name">Soda Italiana Manzana Verde</h3>
+                                <p class="item-description">Burbujas elegantes con el sabor jugoso de manzana verde, tan fresca como pescar hielos de la bebida con la pata.</p>
+                                <span class="item-badge">Más vendido</span>
+                            </div>
+                            <div class="item-price">$40</div>
+                        </div>
+                    </div>
+
+                    <!-- Soda Italiana Mora Azul -->
+                    <div class="menu-item">
+                        <div class="item-image-container">
+                            <img src="img/Bebidas/Soda Mora Azul.jpg" 
+                                 alt="Soda Mora Azul" 
+                                 class="item-image"
+                                 loading="lazy">
+                        </div>
+                        <div class="item-content">
+                            <div class="item-info">
+                                <h3 class="item-name">Soda Italiana Mora Azul</h3>
+                                <p class="item-description">Burbujas mágicas con el enigmático sabor de moras azules, tan adictivo como perseguir una sombra en la noche.</p>
+                                <span class="item-badge">Más vendido</span>
+                            </div>
+                            <div class="item-price">$40</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Categoría de Agua Mineral (CORREGIDO: Ahora está dentro del contenedor) -->
+                <div class="menu-category">
+                    <div class="category-title">
+                        <i class="fas fa-glass-water"></i>
+                        <h2>Agua Mineral</h2>
+                    </div>
+                    
+                    <!-- Agua Mineral -->
+                    <div class="menu-item">
+                        <div class="item-image-container">
+                            <img src="img/Bebidas/Agua Mineral.png" 
+                                 alt="Agua Mineral" 
+                                 class="item-image"
+                                 loading="lazy">
+                        </div>
+                        <div class="item-content">
+                            <div class="item-info">
+                                <h3 class="item-name">Agua Mineral 1/2 Lt</h3>
+                                <p class="item-description">Hidratación pura y refrescante, esencial como el agua para tu bebedero. Sin burbujas, solo frescura natural.</p>
+                                <span class="item-badge">Saludable</span>
+                            </div>
+                            <div class="item-price">$40</div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Sección de Banderillas -->
     <section id="banderillas" class="section">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Banderillas Coreanas</h2>
-                <p>Deliciosas brochetas con sabores únicos</p>
+                <p>Deliciosas brochetas con sabores únicos que te transportarán a las calles de Seúl</p>
             </div>
             
             <div class="menu-container">
                 <div class="menu-header header-banderillas">
-                    <h1><i class="fas fa-drumstick-bite me-2"></i>Banderillas</h1>
+                    <h1><i class="fas fa-drumstick-bite me-2"></i>Banderillas Coreanas</h1>
                 </div>
                 
                 <div class="menu-section p-4">
                     <div class="menu-category">
-                        <div class="category-title">
+                        <div class="category-title mb-4">
                             <i class="fas fa-fire"></i>
                             <h2>Nuestras Banderillas</h2>
                         </div>
                         
-                        <div class="menu-item">
-                            <div class="item-content">
-                                <div class="item-info">
-                                    <h3 class="item-name">Queso Cheddar</h3>
-                                    <p class="item-description">Deliciosa banderilla con queso cheddar derretido</p>
-                                </div>
-                                <div class="item-price">$45</div>
+                        <!-- Banderilla Clásica -->
+                        <div class="flavor-item classic">
+                            <img src="img/Alimentos/Banderilla Clasica.png" 
+                                 alt="Banderilla Clásica" 
+                                 class="flavor-image">
+                            <div class="flavor-content">
+                                <h3 class="flavor-name">Clásica</h3>
+                                <p class="flavor-description">Salchicha de alta calidad envuelta en masa esponjosa, empanizada con panko. Acabado con azúcar y salsa ketchup-mostaza.</p>
+                                <span class="flavor-type">Tradicional</span>
+                                <div class="flavor-price">$45 c/u</div>
                             </div>
                         </div>
                         
-                        <div class="menu-item">
-                            <div class="item-content">
-                                <div class="item-info">
-                                    <h3 class="item-name">Jalapeño Cheddar</h3>
-                                    <p class="item-description">Queso cheddar con jalapeño</p>
-                                    <span class="item-badge">Picante</span>
-                                </div>
-                                <div class="item-price">$45</div>
+                        <!-- Banderilla Jalapeño -->
+                        <div class="flavor-item jalapeno">
+                            <img src="img/Alimentos/Banderilla Jalapeño.png" 
+                                 alt="Banderilla Jalapeño" 
+                                 class="flavor-image">
+                            <div class="flavor-content">
+                                <h3 class="flavor-name">Jalapeño</h3>
+                                <p class="flavor-description">Salchicha con trozos de jalapeño fresco para un toque picante. Acompañada de mayonesa chipotle ahumada.</p>
+                                <span class="flavor-type">Picante Medio</span>
+                                <div class="flavor-price">$45 c/u</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Banderilla Queso Cheddar -->
+                        <div class="flavor-item cheddar">
+                            <img src="img/Alimentos/Banderilla Cheddar.png" 
+                                 alt="Banderilla Queso Cheddar" 
+                                 class="flavor-image">
+                            <div class="flavor-content">
+                                <h3 class="flavor-name">Queso Cheddar</h3>
+                                <p class="flavor-description">Barra 100% de queso cheddar premium que ofrece el auténtico "efecto hilos" con cada mordisco.</p>
+                                <span class="flavor-type">Queso</span>
+                                <div class="flavor-price">$45 c/u</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Banderilla Flammin Hot -->
+                        <div class="flavor-item flamin">
+                            <img src="img/Alimentos/Banderilla Flammin Hot.jpg" 
+                                 alt="Banderilla Flammin Hot" 
+                                 class="flavor-image">
+                            <div class="flavor-content">
+                                <h3 class="flavor-name">Flammin Hot</h3>
+                                <p class="flavor-description">Cubierta con una costra de papas Flamin' Hot para una explosión de calor. Servida con salsa ranch.</p>
+                                <span class="flavor-type">Extra Picante</span>
+                                <div class="flavor-price">$45 c/u</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Banderilla Ramen -->
+                        <div class="flavor-item ramen">
+                            <img src="img/Alimentos/Banerilla Ramen.jpg" 
+                                 alt="Banderilla Ramen" 
+                                 class="flavor-image">
+                            <div class="flavor-content">
+                                <h3 class="flavor-name">Ramen</h3>
+                                <p class="flavor-description">Masa crujiente cubierta con fideos de ramen deshidratados para una experiencia textural única.</p>
+                                <span class="flavor-type">Crujiente</span>
+                                <div class="flavor-price">$45 c/u</div>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="menu-category">
-                        <div class="category-title">
-                            <i class="fas fa-star"></i>
-                            <h2>Combos</h2>
-                        </div>
-                        
-                        <div class="menu-item">
-                            <div class="item-content">
-                                <div class="item-info">
-                                    <h3 class="item-name">Combo 3 Banderillas</h3>
-                                    <p class="item-description">Elige 3 sabores de nuestras banderillas</p>
-                                    <span class="item-badge">Ahorra $35</span>
-                                </div>
-                                <div class="item-price">$100</div>
-                            </div>
-                        </div>
+                    <!-- Sección de Combos -->
+                    <div class="combo-section">
+                        <h3 class="combo-title"><i class="fas fa-star me-2"></i>Combos Especiales</h3>
+                        <div class="combo-price">$120</div>
+                        <p class="mb-2">Elige 3 sabores de nuestras banderillas</p>
+                        <span class="combo-saving">Ahorras $15</span>
                     </div>
                 </div>
             </div>
@@ -744,9 +1005,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4 mb-4 mb-md-0">
-                    <img src="https://via.placeholder.com/150x80?text=Michi+Crunch" 
+                    <img src="img/Michi Crunch_logo.jpeg" 
                          alt="Michi Crunch" 
-                         class="mb-3">
+                         class="mb-3" style="max-height: 80px;">
                     <p>Deliciosos snacks coreanos para disfrutar en cualquier momento</p>
                 </div>
                 <div class="col-md-4 mb-4 mb-md-0">
