@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Michi Crunch - Menú Interactivo</title>
+    <title>Michi Crunch - Menú Digital</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -247,199 +247,143 @@
             background: linear-gradient(135deg, var(--banderillas-color), #E55656);
         }
         
-        .header-michirguesas {
+        .header-michiburguers {
             background: linear-gradient(135deg, var(--burgers-color), #6A11CB);
         }
         
-        /* Componente: Menu Item */
-        .menu-item {
-            display: flex;
-            flex-direction: column;
+        /* Nuevo diseño: Lista compacta de productos */
+        .product-list {
+            display: grid;
+            gap: 1.5rem;
             margin-bottom: 2rem;
+        }
+        
+        .product-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            border-radius: 12px;
+            background: #f8f9fa;
+            transition: var(--transition);
+            cursor: pointer;
+            border-left: 4px solid transparent;
+        }
+        
+        .product-item:hover {
+            transform: translateX(5px);
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-left-color: var(--primary-color);
+        }
+        
+        .product-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+            object-fit: cover;
+            margin-right: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .product-info {
+            flex: 1;
+        }
+        
+        .product-name {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            color: var(--dark-color);
+            font-size: 1.1rem;
+        }
+        
+        .product-description {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+        
+        .product-price {
+            font-weight: 700;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+        
+        .product-badge {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--accent-color), #FFD166);
+            color: #333;
+            padding: 0.2rem 0.6rem;
+            border-radius: 15px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+        
+        /* Diseño para banderillas */
+        .flavor-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .flavor-card {
+            background: white;
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.08);
             transition: var(--transition);
-            background-color: white;
-            position: relative;
-        }
-
-        .menu-item:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
-        }
-
-        .item-image-container {
-            width: 100%;
-            height: 200px;
-            overflow: hidden;
-            position: relative;
-            background: #f5f5f5;
             cursor: pointer;
         }
-
-        .item-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.7s ease;
-        }
-
-        .menu-item:hover .item-image {
-            transform: scale(1.08);
-        }
-
-        .item-content {
-            padding: 1.5rem;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-        }
         
-        .item-info {
-            flex: 1;
-        }
-        
-        .item-name {
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-            color: var(--dark-color);
-            font-size: 1.2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .item-description {
-            font-size: 0.95rem;
-            color: #666;
-            margin-bottom: 1rem;
-            line-height: 1.6;
-        }
-
-        .item-badge {
-            display: inline-block;
-            background: linear-gradient(90deg, var(--accent-color), #FFD166);
-            color: #333;
-            padding: 0.35rem 0.9rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-            box-shadow: 0 2px 5px rgba(255,190,11,0.3);
-        }
-
-        .item-price {
-            font-weight: 700;
-            color: var(--primary-color);
-            font-size: 1.3rem;
-            margin-top: auto;
-        }
-        
-        /* Componente: Flavor Item (Banderillas) */
-        .flavor-item {
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 2.5rem;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: var(--transition);
-            background: white;
-        }
-        
-        .flavor-item:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        .flavor-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
         }
         
         .flavor-image {
             width: 100%;
-            height: 200px;
+            height: 150px;
             object-fit: cover;
-            cursor: pointer;
         }
         
         .flavor-content {
-            padding: 1.5rem;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            padding: 1.2rem;
         }
         
         .flavor-name {
-            font-weight: bold;
-            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
             color: var(--primary-color);
-            margin-bottom: 0.75rem;
+            font-size: 1.2rem;
         }
         
         .flavor-description {
-            color: #666;
-            line-height: 1.6;
-            margin-bottom: 1rem;
-        }
-        
-        .flavor-type {
-            display: inline-block;
-            padding: 0.4rem 1rem;
-            border-radius: 20px;
             font-size: 0.85rem;
-            font-weight: 600;
-            background-color: #ffecec;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
+            color: #666;
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
         }
         
         .flavor-price {
             font-weight: 700;
             color: var(--primary-color);
-            font-size: 1.3rem;
-            margin-top: auto;
+            font-size: 1.2rem;
         }
         
-        .classic { border-left: 5px solid var(--secondary-color); }
-        .jalapeno { border-left: 5px solid #77dd77; }
-        .cheddar { border-left: 5px solid var(--accent-color); }
-        .flamin { border-left: 5px solid #ff4500; }
-        .ramen { border-left: 5px solid #ff9e1b; }
-        
-        /* Componente: Combo Section */
-        .combo-section {
-            background: linear-gradient(135deg, rgba(255,190,11,0.15), rgba(255,190,11,0.05));
+        .flavor-type {
+            display: inline-block;
+            padding: 0.3rem 0.7rem;
             border-radius: 15px;
-            padding: 2rem;
-            margin-top: 2.5rem;
-            text-align: center;
-            border: 2px dashed var(--accent-color);
-        }
-        
-        .combo-title {
-            color: var(--accent-color);
-            margin-bottom: 1rem;
+            font-size: 0.75rem;
             font-weight: 600;
-        }
-        
-        .combo-price {
-            font-size: 2.2rem;
-            font-weight: 700;
+            background-color: #ffecec;
             color: var(--primary-color);
             margin-bottom: 0.5rem;
         }
         
-        .combo-saving {
-            display: inline-block;
-            background: linear-gradient(90deg, var(--accent-color), #FFD166);
-            color: 333;
-            padding: 0.4rem 1.2rem;
-            border-radius: 20px;
-            font-weight: 600;
-            margin-top: 0.5rem;
-            box-shadow: 0 3px 8px rgba(255,190,11,0.3);
-        }
-        
-        /* Tabla de precios corregida */
+        /* Tabla de precios */
         .pricing-table {
             width: 100%;
             border-collapse: collapse;
@@ -472,7 +416,7 @@
             border-bottom: none;
         }
         
-        /* Sección de salsas corregida */
+        /* Sección de salsas */
         .sauces-section {
             background: linear-gradient(135deg, rgba(255,190,11,0.15), rgba(255,190,11,0.05));
             border-radius: 15px;
@@ -499,6 +443,40 @@
             color: var(--primary-color);
             width: 25px;
             text-align: center;
+        }
+        
+        /* Componente: Combo Section */
+        .combo-section {
+            background: linear-gradient(135deg, rgba(255,190,11,0.15), rgba(255,190,11,0.05));
+            border-radius: 15px;
+            padding: 2rem;
+            margin-top: 2.5rem;
+            text-align: center;
+            border: 2px dashed var(--accent-color);
+        }
+        
+        .combo-title {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .combo-price {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .combo-saving {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--accent-color), #FFD166);
+            color: #333;
+            padding: 0.4rem 1.2rem;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-top: 0.5rem;
+            box-shadow: 0 3px 8px rgba(255,190,11,0.3);
         }
         
         /* Componente: Footer */
@@ -539,7 +517,7 @@
             color: var(--whatsapp-color);
         }
         
-        /* Componente: WhatsApp Float con mejor animación de pulso */
+        /* Componente: WhatsApp Float */
         .whatsapp-float {
             position: fixed;
             width: 60px;
@@ -565,7 +543,7 @@
             transform: scale(1.1);
             color: #FFF;
             box-shadow: 0 0 20px rgba(37, 211, 102, 0.7);
-            animation: none; /* Detiene la animación al hacer hover */
+            animation: none;
         }
         
         @keyframes pulse-whatsapp {
@@ -644,54 +622,18 @@
         
         /* Responsive Design */
         @media (min-width: 768px) {
-            .menu-item {
-                flex-direction: row;
+            .product-list {
+                grid-template-columns: 1fr;
             }
             
-            .item-image-container {
-                width: 40%;
-                height: auto;
-                flex-shrink: 0;
-            }
-            
-            .item-content {
-                width: 60%;
-                padding: 2rem;
-            }
-            
-            .flavor-item {
-                flex-direction: row;
-            }
-            
-            .flavor-image {
-                width: 250px;
-                height: 250px;
-                object-fit: cover;
-                flex-shrink: 0;
+            .flavor-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
         @media (max-width: 768px) {
-            .flavor-item {
-                flex-direction: column;
-            }
-            
-            .flavor-image {
-                width: 100%;
-                height: 200px;
-            }
-            
             .section-title {
                 font-size: 2rem;
-            }
-            
-            .item-content {
-                flex-direction: column;
-            }
-            
-            .item-price {
-                margin-top: 1rem;
-                align-self: flex-start;
             }
             
             .menu-tab {
@@ -721,6 +663,16 @@
             .pricing-table td {
                 padding: 0.5rem;
             }
+            
+            .flavor-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .product-image {
+                width: 70px;
+                height: 70px;
+                margin-right: 1rem;
+            }
         }
         
         @media (max-width: 576px) {
@@ -736,26 +688,22 @@
                 font-size: 1.5rem;
             }
             
-            .item-name {
-                font-size: 1.1rem;
+            .product-name {
+                font-size: 1rem;
             }
             
-            .item-description {
-                font-size: 0.9rem;
-            }
-            
-            .flavor-name {
-                font-size: 1.2rem;
-            }
-            
-            .flavor-content {
-                padding: 1.2rem;
+            .product-description {
+                font-size: 0.8rem;
             }
             
             .category-btn {
                 padding: 10px 20px;
                 font-size: 0.9rem;
                 margin: 0 5px 10px;
+            }
+            
+            .product-item {
+                padding: 0.8rem;
             }
         }
     </style>
@@ -851,125 +799,108 @@
                     <h1><i class="fas fa-utensils me-2"></i>Snacks Michi Crunch</h1>
                 </div>
                 
-                <div class="menu-section p-4">
-                    <div class="menu-category">
-                        <div class="category-title">
-                            <i class="fas fa-fire"></i>
-                            <h2>Especialidades</h2>
-                        </div>
-                        
+                <div class="p-4">
+                    <div class="product-list">
                         <!-- Michi Crispy -->
-                        <div class="menu-item">
-                            <div class="item-image-container">
-                                <img src="img/Alimentos/Michi%20Crispy.jpg" 
-                                     alt="Michi Crispy" 
-                                     class="item-image"
-                                     loading="lazy"
-                                     onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%22300%22 height%3D%22200%22 viewBox%3D%220 0 300 200%22%3E%3Crect fill%3D%22%23f5f5f5%22 width%3D%22300%22 height%3D%22200%22%2F%3E%3Ctext fill%3D%22%23999%22 font-family%3D%22sans-serif%22 font-size%3D%2220%22 dy%3D%2210.5%22 font-weight%3D%22bold%22 x%3D%2250%25%22 y%3D%2250%25%22 text-anchor%3D%22middle%22%3EImagen no disponible%3C%2Ftext%3E%3C%2Fsvg%3E'">
-                            </div>
-                            <div class="item-content">
-                                <div class="item-info">
-                                    <h3 class="item-name">Michi Crispy <span class="item-price">$55</span></h3>
-                                    <p class="item-description">Papas a la francesa extra crujientes, finas y elegantes como los bigotes de un gato siamés. Acompáñalas con nuestros dips</p>
-                                    <span class="item-badge">Recomendado</span>
-                                </div>
+                        <div class="product-item">
+                            <img src="img/Alimentos/Michi%20Crispy.jpg" 
+                                 alt="Michi Crispy" 
+                                 class="product-image"
+                                 loading="lazy"
+                                 onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%2280%22 height%3D%2280%22 viewBox%3D%220 0 80 80%22%3E%3Crect fill%3D%22%23f5f5f5%22 width%3D%2280%22 height%3D%2280%22%2F%3E%3Ctext fill%3D%22%23999%22 font-family%3D%22sans-serif%22 font-size%3D%2210%22 dy%3D%223.5%22 font-weight%3D%22bold%22 x%3D%2250%25%22 y%3D%2250%25%22 text-anchor%3D%22middle%22%3EImagen%3C%2Ftext%3E%3C%2Fsvg%3E'">
+                            <div class="product-info">
+                                <h3 class="product-name">Michi Crispy <span class="product-price">$55</span></h3>
+                                <p class="product-description">Papas a la francesa extra crujientes, finas y elegantes como los bigotes de un gato siamés.</p>
+                                <span class="product-badge">Recomendado</span>
                             </div>
                         </div>
 
                         <!-- Patitas de Queso -->
-                        <div class="menu-item">
-                            <div class="item-image-container">
-                                <img src="img/Alimentos/comp-dedos-de-queso.webp" 
-                                     alt="Patitas de Queso" 
-                                     class="item-image"
-                                     loading="lazy"
-                                     onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%22300%22 height%3D%22200%22 viewBox%3D%220 0 300 200%22%3E%3Crect fill%3D%22%23f5f5f5%22 width%3D%22300%22 height%3D%22200%22%2F%3E%3Ctext fill%3D%22%23999%22 font-family%3D%22sans-serif%22 font-size%3D%2220%22 dy%3D%2210.5%22 font-weight%3D%22bold%22 x%3D%2250%25%22 y%3D%2250%25%22 text-anchor%3D%22middle%22%3EImagen no disponible%3C%2Ftext%3E%3C%2Fsvg%3E'">
-                            </div>
-                            <div class="item-content">
-                                <div class="item-info">
-                                    <h3 class="item-name">Patitas de Queso <span class="item-price">$60</span></h3>
-                                    <p class="item-description">Orden de 6 Dedos de queso fundido empanizados, listos para sumergirse en nuestros dips</p>
-                                    <span class="item-badge">Crujiente</span>
-                                </div>
+                        <div class="product-item">
+                            <img src="img/Alimentos/comp-dedos-de-queso.webp" 
+                                 alt="Patitas de Queso" 
+                                 class="product-image"
+                                 loading="lazy"
+                                 onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%2280%22 height%3D%2280%22 viewBox%3D%220 0 80 80%22%3E%3Crect fill%3D%22%23f5f5f5%22 width%3D%2280%22 height%3D%2280%22%2F%3E%3Ctext fill%3D%22%23999%22 font-family%3D%22sans-serif%22 font-size%3D%2210%22 dy%3D%223.5%22 font-weight%3D%22bold%22 x%3D%2250%25%22 y%3D%2250%25%22 text-anchor%3D%22middle%22%3EImagen%3C%2Ftext%3E%3C%2Fsvg%3E'">
+                            <div class="product-info">
+                                <h3 class="product-name">Patitas de Queso <span class="product-price">$60</span></h3>
+                                <p class="product-description">Orden de 6 Dedos de queso fundido empanizados, listos para sumergirse en nuestros dips.</p>
+                                <span class="product-badge">Crujiente</span>
                             </div>
                         </div>
 
                         <!-- Boneless y Alitas -->
-                        <div class="menu-item">
-                            <div class="item-image-container">
-                                <img src="img/Alimentos/Boneles%20Alitas.jpg" 
-                                     alt="Boneless y Alitas" 
-                                     class="item-image"
-                                     loading="lazy"
-                                     onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%22300%22 height%3D%22200%22 viewBox%3D%220 0 300 200%22%3E%3Crect fill%3D%22%23f5f5f5%22 width%3D%22300%22 height%3D%22200%22%2F%3E%3Ctext fill%3D%22%23999%22 font-family%3D%22sans-serif%22 font-size%3D%2220%22 dy%3D%2210.5%22 font-weight%3D%22bold%22 x%3D%2250%25%22 y%3D%2250%25%22 text-anchor%3D%22middle%22%3EImagen no disponible%3C%2Ftext%3E%3C%2Fsvg%3E'">
-                            </div>
-                            <div class="item-content">
-                                <div class="item-info">
-                                    <h3 class="item-name">Boneless y Alitas <span class="item-price">Desde $85</span></h3>
-                                    <p class="item-description">Empanizado extra crocante y jugosidad al 100%. Cada bocado viene bañado en nuestras salsas con personalidad gatuna.</p>
-                                    <span class="item-badge">Más solicitado</span>
-                                </div>
+                        <div class="product-item">
+                            <img src="img/Alimentos/Boneles%20Alitas.jpg" 
+                                 alt="Boneless y Alitas" 
+                                 class="product-image"
+                                 loading="lazy"
+                                 onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%2280%22 height%3D%2280%22 viewBox%3D%220 0 80 80%22%3E%3Crect fill%3D%22%23f5f5f5%22 width%3D%2280%22 height%3D%2280%22%2F%3E%3Ctext fill%3D%22%23999%22 font-family%3D%22sans-serif%22 font-size%3D%2210%22 dy%3D%223.5%22 font-weight%3D%22bold%22 x%3D%2250%25%22 y%3D%2250%25%22 text-anchor%3D%22middle%22%3EImagen%3C%2Ftext%3E%3C%2Fsvg%3E'">
+                            <div class="product-info">
+                                <h3 class="product-name">Boneless y Alitas <span class="product-price">Desde $85</span></h3>
+                                <p class="product-description">Empanizado extra crocante y jugosidad al 100%. Cada bocado viene bañado en nuestras salsas.</p>
+                                <span class="product-badge">Más solicitado</span>
                             </div>
                         </div>
-                        
-                        <!-- Tabla de precios para Boneless/Alitas -->
-                        <div class="w-100 mt-3">
-                            <table class="pricing-table">
-                                <thead>
-                                    <tr>
-                                        <th>Piezas</th>
-                                        <th>Precio</th>
-                                        <th>Salsas Incluidas</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>6 Piezas</td>
-                                        <td>$85</td>
-                                        <td>1 Salsa</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10 Piezas</td>
-                                        <td>$125</td>
-                                        <td>2 Salsas</td>
-                                    </tr>
-                                    <tr>
-                                        <td>15 Piezas</td>
-                                        <td>$165</td>
-                                        <td>+ 2 Salsas</td>
-                                    </tr>
-                                    <tr>
-                                        <td>20 Piezas</td>
-                                        <td>$235</td>
-                                        <td>+ 3 Salsas</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                    </div>
+                    
+                    <!-- Tabla de precios para Boneless/Alitas -->
+                    <div class="w-100 mt-3">
+                        <table class="pricing-table">
+                            <thead>
+                                <tr>
+                                    <th>Piezas</th>
+                                    <th>Precio</th>
+                                    <th>Salsas Incluidas</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>6 Piezas</td>
+                                    <td>$85</td>
+                                    <td>1 Salsa</td>
+                                </tr>
+                                <tr>
+                                    <td>10 Piezas</td>
+                                    <td>$125</td>
+                                    <td>2 Salsas</td>
+                                </tr>
+                                <tr>
+                                    <td>15 Piezas</td>
+                                    <td>$165</td>
+                                    <td>+ 2 Salsas</td>
+                                </tr>
+                                <tr>
+                                    <td>20 Piezas</td>
+                                    <td>$235</td>
+                                    <td>+ 3 Salsas</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
-                        <!-- Sección de Salsas -->
-                        <div class="sauces-section mt-4">
-                            <h4 class="text-center mb-3"><i class="fas fa-pepper-hot me-2"></i>Nuestras Salsas</h4>
-                            <div class="sauce-item">
-                                <div class="sauce-icon"><i class="fas fa-pepper-hot"></i></div>
-                                <div>Michi Fuego (Mango Habanero)</div>
-                            </div>
-                            <div class="sauce-item">
-                                <div class="sauce-icon"><i class="fas fa-fire"></i></div>
-                                <div>Michi Hot (Buffalo)</div>
-                            </div>
-                            <div class="sauce-item">
-                                <div class="sauce-icon"><i class="fas fa-utensils"></i></div>
-                                <div>Mochi BBQ (Receta Original BBQ)</div>
-                            </div>
-                            <div class="sauce-item">
-                                <div class="sauce-icon"><i class="fas fa-lemon"></i></div>
-                                <div>Lemon Pepper</div>
-                            </div>
-                            <div class="sauce-item">
-                                <div class="sauce-icon"><i class="fas fa-berry"></i></div>
-                                <div>Frutos Rojos</div>
-                            </div>
+                    <!-- Sección de Salsas -->
+                    <div class="sauces-section mt-4">
+                        <h4 class="text-center mb-3"><i class="fas fa-pepper-hot me-2"></i>Nuestras Salsas</h4>
+                        <div class="sauce-item">
+                            <div class="sauce-icon"><i class="fas fa-pepper-hot"></i></div>
+                            <div>Michi Fuego (Mango Habanero)</div>
+                        </div>
+                        <div class="sauce-item">
+                            <div class="sauce-icon"><i class="fas fa-fire"></i></div>
+                            <div>Michi Hot (Buffalo)</div>
+                        </div>
+                        <div class="sauce-item">
+                            <div class="sauce-icon"><i class="fas fa-utensils"></i></div>
+                            <div>Mochi BBQ (Receta Original BBQ)</div>
+                        </div>
+                        <div class="sauce-item">
+                            <div class="sauce-icon"><i class="fas fa-lemon"></i></div>
+                            <div>Lemon Pepper</div>
+                        </div>
+                        <div class="sauce-item">
+                            <div class="sauce-icon"><i class="fas fa-berry"></i></div>
+                            <div>Frutos Rojos</div>
                         </div>
                     </div>
                 </div>
@@ -990,153 +921,125 @@
                 <h1><i class="fas fa-glass-water me-2"></i>Bebidas</h1>
             </div>
             
-            <div class="menu-section p-4">
+            <div class="p-4">
                 <!-- Categoría de Mojitos -->
-                <div class="menu-category">
-                    <div class="category-title">
-                        <i class="fas fa-glass-martini-alt"></i>
-                        <h2>Mojitos 1L</h2>
+                <div class="mb-4">
+                    <div class="category-title mb-3">
+                        <i class="fas fa-glass-martini-alt me-2"></i>
+                        <h3>Mojitos 1L - $90 c/u</h3>
                     </div>
-                    
-                   <!-- Mojito Frutos Rojos -->
-                    <div class="menu-item">
-                        <div class="item-image-container">
+                    <div class="product-list">
+                        <!-- Mojito Frutos Rojos -->
+                        <div class="product-item">
                             <img src="img/Bebidas/Mojito%20Frutos%20Rojos.jpg" 
                                  alt="Mojito Frutos Rojos" 
-                                 class="item-image"
+                                 class="product-image"
                                  loading="lazy"
-                                 onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%22300%22 height%3D%22200%22 viewBox%3D%220 0 300 200%22%3E%3Crect fill%3D%22%23f5f5f5%22 width%3D%22300%22 height%3D%22200%22%2F%3E%3Ctext fill%3D%22%23999%22 font-family%3D%22sans-serif%22 font-size%3D%2220%22 dy%3D%2210.5%22 font-weight%3D%22bold%22 x%3D%2250%25%22 y%3D%2250%25%22 text-anchor%3D%22middle%22%3EImagen no disponible%3C%2Ftext%3E%3C%2Fsvg%3E'">
-                        </div>
-                        <div class="item-content">
-                            <div class="item-info">
-                                <h3 class="item-name">Mojito Frutos Rojos <span class="item-price">$90</span></h3>
-                                <p class="item-description">¡La explosión de bayas que hará ronronear de gusto a tus bigotes! Moras, frambuesas y arándanos macerados con hierbabuena, limón y burbujas juguetonas.</p>
-                                <span class="item-badge">Recomendado</span>
+                                 onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%2280%22 height%3D%2280%22 viewBox%3D%220 0 80 80%22%3E%3Crect fill%3D%22%23f5f5f5%22 width%3D%2280%22 height%3D%2280%22%2F%3E%3Ctext fill%3D%22%23999%22 font-family%3D%22sans-serif%22 font-size%3D%2210%22 dy%3D%223.5%22 font-weight%3D%22bold%22 x%3D%2250%25%22 y%3D%2250%25%22 text-anchor%3D%22middle%22%3EImagen%3C%2Ftext%3E%3C%2Fsvg%3E'">
+                            <div class="product-info">
+                                <h3 class="product-name">Frutos Rojos</h3>
+                                <p class="product-description">Moras, frambuesas y arándanos macerados con hierbabuena, limón y burbujas juguetonas.</p>
+                                <span class="product-badge">Recomendado</span>
                             </div>
                         </div>
-                    </div>
-                    
-                   <!-- Mojito Mango -->
-                    <div class="menu-item">
-                        <div class="item-image-container">
+                        
+                        <!-- Mojito Mango -->
+                        <div class="product-item">
                             <img src="img/Bebidas/mojito-de-mango.jpg" 
                                  alt="Mojito de Mango" 
-                                 class="item-image"
+                                 class="product-image"
                                  loading="lazy"
-                                 onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%22300%22 height%3D%22200%22 viewBox%3D%220 0 300 200%22%3E%3Crect fill%3D%22%23f5f5f5%22 width%3D%22300%22 height%3D%22200%22%2F%3E%3Ctext fill%3D%22%23999%22 font-family%3D%22sans-serif%22 font-size%3D%2220%22 dy%3D%2210.5%22 font-weight%3D%22bold%22 x%3D%2250%25%22 y%3D%2250%25%22 text-anchor%3D%22middle%22%3EImagen no disponible%3C%2Ftext%3E%3C%2Fsvg%3E'">
-                        </div>
-                        <div class="item-content">
-                            <div class="item-info">
-                                <h3 class="item-name">Mojito Mango <span class="item-price">$90</span></h3>
-                                <p class="item-description">¡Un viaje tropical que despertará a tu felino interior! Mango dulce y jugoso mezclado con hierbabuena fresca, un toque de lima y burbujas divertidas.</p>
-                                <span class="item-badge">Recomendado</span>
+                                 onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%2280%22 height%3D%2280%22 viewBox%3D%220 0 80 80%22%3E%3Crect fill%3D%22%23f5f5f5%22 width%3D%2280%22 height%3D%2280%22%2F%3E%3Ctext fill%3D%22%23999%22 font-family%3D%22sans-serif%22 font-size%3D%2210%22 dy%3D%223.5%22 font-weight%3D%22bold%22 x%3D%2250%25%22 y%3D%2250%25%22 text-anchor%3D%22middle%22%3EImagen%3C%2Ftext%3E%3C%2Fsvg%3E'">
+                            <div class="product-info">
+                                <h3 class="product-name">Mango</h3>
+                                <p class="product-description">Mango dulce y jugoso mezclado con hierbabuena fresca, un toque de lima y burbujas divertidas.</p>
+                                <span class="product-badge">Recomendado</span>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Mojito Tradicional -->
-                    <div class="menu-item">
-                        <div class="item-image-container">
+                        <!-- Mojito Tradicional -->
+                        <div class="product-item">
                             <img src="img/Bebidas/Mojito%20Tradicional.jpg" 
                                  alt="Mojito Tradicional" 
-                                 class="item-image"
+                                 class="product-image"
                                  loading="lazy"
-                                 onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%22300%22 height%3D%22200%22 viewBox%3D%220 0 300 200%22%3E%3Crect fill%3D%22%23f5f5f5%22 width%3D%22300%22 height%3D%22200%22%2F%3E%3Ctext fill%3D%22%23999%22 font-family%3D%22sans-serif%22 font-size%3D%2220%22 dy%3D%2210.5%22 font-weight%3D%22bold%22 x%3D%2250%25%22 y%3D%2250%25%22 text-anchor%3D%22middle%22%3EImagen no disponible%3C%2Ftext%3E%3C%2Fsvg%3E'">
-                        </div>
-                        <div class="item-content">
-                            <div class="item-info">
-                                <h3 class="item-name">Tradicional <span class="item-price">$90</span></h3>
-                                <p class="item-description">¡El clásico que siempre cae de patitas! La combinación perfecta de hierbabuena fresca, lima jugosa y un toque de dulce con burbujas alegres.</p>
-                                <span class="item-badge">Recomendado</span>
+                                 onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%2280%22 height%3D%2280%22 viewBox%3D%220 0 80 80%22%3E%3Crect fill%3D%22%23f5f5f5%22 width%3D%2280%22 height%3D%2280%22%2F%3E%3Ctext fill%3D%22%23999%22 font-family%3D%22sans-serif%22 font-size%3D%2210%22 dy%3D%223.5%22 font-weight%3D%22bold%22 x%3D%2250%25%22 y%3D%2250%25%22 text-anchor%3D%22middle%22%3EImagen%3C%2Ftext%3E%3C%2Fsvg%3E'">
+                            <div class="product-info">
+                                <h3 class="product-name">Tradicional</h3>
+                                <p class="product-description">Hierbabuena fresca, lima jugosa y un toque de dulce con burbujas alegres.</p>
+                                <span class="product-badge">Recomendado</span>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Mojito Maracuyá -->
-                    <div class="menu-item">
-                        <div class="item-image-container">
+                        <!-- Mojito Maracuyá -->
+                        <div class="product-item">
                             <img src="img/Bebidas/Mojito%20Maracuyá.jpg" 
                                  alt="Mojito Maracuyá" 
-                                 class="item-image"
+                                 class="product-image"
                                  loading="lazy"
-                                 onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%22300%22 height%3D%22200%22 viewBox%3D%220 0 300 200%22%3E%3Crect fill%3D%22%23f5f5f5%22 width%3D%22300%22 height%3D%22200%22%2F%3E%3Ctext fill%3D%22%23999%22 font-family%3D%22sans-serif%22 font-size%3D%2220%22 dy%3D%2210.5%22 font-weight%3D%22bold%22 x%3D%2250%25%22 y%3D%2250%25%22 text-anchor%3D%22middle%22%3EImagen no disponible%3C%2Ftext%3E%3C%2Fsvg%3E'">
-                        </div>
-                        <div class="item-content">
-                            <div class="item-info">
-                                <h3 class="item-name">Maracuyá <span class="item-price">$90</span></h3>
-                                <p class="item-description">¡La aventura tropical que tu instinto felino necesitaba! Pura pasión frutal con el toque ácido y vibrante de la maracuyá, mezclado con hierbabuena fresca, lima y burbujas juguetonas.</p>
-                                <span class="item-badge">Recomendado</span>
+                                 onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%2280%22 height%3D%2280%22 viewBox%3D%220 0 80 80%22%3E%3Crect fill%3D%22%23f5f5f5%22 width%3D%2280%22 height%3D%2280%22%2F%3E%3Ctext fill%3D%22%23999%22 font-family%3D%22sans-serif%22 font-size%3D%2210%22 dy%3D%223.5%22 font-weight%3D%22bold%22 x%3D%2250%25%22 y%3D%2250%25%22 text-anchor%3D%22middle%22%3EImagen%3C%2Ftext%3E%3C%2Fsvg%3E'">
+                            <div class="product-info">
+                                <h3 class="product-name">Maracuyá</h3>
+                                <p class="product-description">Pura pasión frutal con el toque ácido y vibrante de la maracuyá, mezclado con hierbabuena.</p>
+                                <span class="product-badge">Recomendado</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Categoría de Sodas Italianas -->
-                <div class="menu-category">
-                    <div class="category-title">
-                        <i class="fas fa-glass-water"></i>
-                        <h2>Sodas Italianas</h2>
+                <div class="mb-4">
+                    <div class="category-title mb-3">
+                        <i class="fas fa-glass-water me-2"></i>
+                        <h3>Sodas Italianas - $40 c/u</h3>
                     </div>
-                    
-                    <!-- Soda Italiana Manzana Verde -->
-                    <div class="menu-item">
-                        <div class="item-image-container">
+                    <div class="product-list">
+                        <!-- Soda Italiana Manzana Verde -->
+                        <div class="product-item">
                             <img src="img/Bebidas/Soda%20Manzana%20Verde.jpg" 
                                  alt="Soda Manzana Verde" 
-                                 class="item-image"
+                                 class="product-image"
                                  loading="lazy"
-                                 onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%22300%22 height%3D%22200%22 viewBox%3D%220 0 300 200%22%3E%3Crect fill%3D%22%23f5f5f5%22 width%3D%22300%22 height%3D%22200%22%2F%3E%3Ctext fill%3D%22%23999%22 font-family%3D%22sans-serif%22 font-size%3D%2220%22 dy%3D%2210.5%22 font-weight%3D%22bold%22 x%3D%2250%25%22 y%3D%2250%25%22 text-anchor%3D%22middle%22%3EImagen no disponible%3C%2Ftext%3E%3C%2Fsvg%3E'">
-                        </div>
-                        <div class="item-content">
-                            <div class="item-info">
-                                <h3 class="item-name">Soda Italiana Manzana Verde <span class="item-price">$40</span></h3>
-                                <p class="item-description">Burbujas elegantes con el sabor jugoso de manzana verde, tan fresca como pescar hielos de la bebida con la pata.</p>
-                                <span class="item-badge">Más vendido</span>
+                                 onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%2280%22 height%3D%2280%22 viewBox%3D%220 0 80 80%22%3E%3Crect fill%3D%22%23f5f5f5%22 width%3D%2280%22 height%3D%2280%22%2F%3E%3Ctext fill%3D%22%23999%22 font-family%3D%22sans-serif%22 font-size%3D%2210%22 dy%3D%223.5%22 font-weight%3D%22bold%22 x%3D%2250%25%22 y%3D%2250%25%22 text-anchor%3D%22middle%22%3EImagen%3C%2Ftext%3E%3C%2Fsvg%3E'">
+                            <div class="product-info">
+                                <h3 class="product-name">Manzana Verde</h3>
+                                <p class="product-description">Burbujas elegantes con el sabor jugoso de manzana verde, tan fresca como pescar hielos.</p>
+                                <span class="product-badge">Más vendido</span>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Soda Italiana Mora Azul -->
-                    <div class="menu-item">
-                        <div class="item-image-container">
+                        <!-- Soda Italiana Mora Azul -->
+                        <div class="product-item">
                             <img src="img/Bebidas/Soda%20Mora%20Azul.jpg" 
                                  alt="Soda Mora Azul" 
-                                 class="item-image"
+                                 class="product-image"
                                  loading="lazy"
-                                 onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%22300%22 height%3D%22200%22 viewBox%3D%220 0 300 200%22%3E%3Crect fill%3D%22%23f5f5f5%22 width%3D%22300%22 height%3D%22200%22%2F%3E%3Ctext fill%3D%22%23999%22 font-family%3D%22sans-serif%22 font-size%3D%2220%22 dy%3D%2210.5%22 font-weight%3D%22bold%22 x%3D%2250%25%22 y%3D%2250%25%22 text-anchor%3D%22middle%22%3EImagen no disponible%3C%2Ftext%3E%3C%2Fsvg%3E'">
-                        </div>
-                        <div class="item-content">
-                            <div class="item-info">
-                                <h3 class="item-name">Soda Italiana Mora Azul <span class="item-price">$40</span></h3>
-                                <p class="item-description">Burbujas mágicas con el enigmático sabor de moras azules, tan adictivo como perseguir una sombra en la noche.</p>
-                                <span class="item-badge">Más vendido</span>
+                                 onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%2280%22 height%3D%2280%22 viewBox%3D%220 0 80 80%22%3E%3Crect fill%3D%22%23f5f5f5%22 width%3D%2280%22 height%3D%2280%22%2F%3E%3Ctext fill%3D%22%23999%22 font-family%3D%22sans-serif%22 font-size%3D%2210%22 dy%3D%223.5%22 font-weight%3D%22bold%22 x%3D%2250%25%22 y%3D%2250%25%22 text-anchor%3D%22middle%22%3EImagen%3C%2Ftext%3E%3C%2Fsvg%3E'">
+                            <div class="product-info">
+                                <h3 class="product-name">Mora Azul</h3>
+                                <p class="product-description">Burbujas mágicas con el enigmático sabor de moras azules, tan adictivo como perseguir una sombra.</p>
+                                <span class="product-badge">Más vendido</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Categoría de Agua Mineral -->
-                <div class="menu-category">
-                    <div class="category-title">
-                        <i class="fas fa-glass-water"></i>
-                        <h2>Agua Mineral</h2>
+                <div>
+                    <div class="category-title mb-3">
+                        <i class="fas fa-glass-water me-2"></i>
+                        <h3>Agua Mineral - $40</h3>
                     </div>
-                    
-                    <!-- Agua Mineral -->
-                    <div class="menu-item">
-                        <div class="item-image-container">
-                            <img src="img/Bebidas/Agua%20Mineral.png" 
-                                 alt="Agua Mineral" 
-                                 class="item-image"
-                                 loading="lazy"
-                                 onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%22300%22 height%3D%22200%22 viewBox%3D%220 0 300 200%22%3E%3Crect fill%3D%22%23f5f5f5%22 width%3D%22300%22 height%3D%22200%22%2F%3E%3Ctext fill%3D%22%23999%22 font-family%3D%22sans-serif%22 font-size%3D%2220%22 dy%3D%2210.5%22 font-weight%3D%22bold%22 x%3D%2250%25%22 y%3D%2250%25%22 text-anchor%3D%22middle%22%3EImagen no disponible%3C%2Ftext%3E%3C%2Fsvg%3E'">
-                        </div>
-                        <div class="item-content">
-                            <div class="item-info">
-                                <h3 class="item-name">Agua Mineral 1/2 Lt <span class="item-price">$40</span></h3>
-                                <p class="item-description">Hidratación pura y refrescante, esencial como el agua para tu bebedero. Sin burbujas, solo frescura natural.</p>
-                                <span class="item-badge">Saludable</span>
-                            </div>
+                    <div class="product-item">
+                        <img src="img/Bebidas/Agua%20Mineral.png" 
+                             alt="Agua Mineral" 
+                             class="product-image"
+                             loading="lazy"
+                             onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%2280%22 height%3D%2280%22 viewBox%3D%220 0 80 80%22%3E%3Crect fill%3D%22%23f5f5f5%22 width%3D%2280%22 height%3D%2280%22%2F%3E%3Ctext fill%3D%22%23999%22 font-family%3D%22sans-serif%22 font-size%3D%2210%22 dy%3D%223.5%22 font-weight%3D%22bold%22 x%3D%2250%25%22 y%3D%2250%25%22 text-anchor%3D%22middle%22%3EImagen%3C%2Ftext%3E%3C%2Fsvg%3E'">
+                        <div class="product-info">
+                            <h3 class="product-name">Agua Mineral 1/2 Lt</h3>
+                            <p class="product-description">Hidratación pura y refrescante, esencial como el agua para tu bebedero. Sin burbujas, solo frescura natural.</p>
+                            <span class="product-badge">Saludable</span>
                         </div>
                     </div>
                 </div>
@@ -1158,79 +1061,60 @@
                     <h1><i class="fas fa-drumstick-bite me-2"></i>Banderillas Coreanas</h1>
                 </div>
                 
-                <div class="menu-section p-4">
-                    <div class="menu-category">
-                        <div class="category-title mb-4">
-                            <i class="fas fa-fire"></i>
-                            <h2>Nuestras Banderillas</h2>
-                        </div>
-                        
+                <div class="p-4">
+                    <div class="flavor-grid">
                         <!-- Banderilla Clásica -->
-                        <div class="flavor-item classic">
+                        <div class="flavor-card classic">
                             <img src="img/Alimentos/Banderilla%20Clasica.png" 
                                  alt="Banderilla Clásica" 
                                  class="flavor-image"
-                                 onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%22250%22 height%3D%22250%22 viewBox%3D%220 0 250 250%22%3E%3Crect fill%3D%22%23f5f5f5%22 width%3D%22250%22 height%3D%22250%22%2F%3E%3Ctext fill%3D%22%23999%22 font-family%3D%22sans-serif%22 font-size%3D%2220%22 dy%3D%2210.5%22 font-weight%3D%22bold%22 x%3D%2250%25%22 y%3D%2250%25%22 text-anchor%3D%22middle%22%3EImagen no disponible%3C%2Ftext%3E%3C%2Fsvg%3E'">
+                                 onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%22300%22 height%3D%22150%22 viewBox%3D%220 0 300 150%22%3E%3Crect fill%3D%22%23f5f5f5%22 width%3D%22300%22 height%3D%22150%22%2F%3E%3Ctext fill%3D%22%23999%22 font-family%3D%22sans-serif%22 font-size%3D%2212%22 dy%3D%223.5%22 font-weight%3D%22bold%22 x%3D%2250%25%22 y%3D%2250%25%22 text-anchor%3D%22middle%22%3EImagen%3C%2Ftext%3E%3C%2Fsvg%3E'">
                             <div class="flavor-content">
-                                <h3 class="flavor-name">Clásica</h3>
-                                <p class="flavor-description">Salchicha de alta calidad envuelta en masa esponjosa, empanizada con panko. Acabado con azúcar y salsa ketchup-mostaza.</p>
                                 <span class="flavor-type">Tradicional</span>
+                                <h3 class="flavor-name">Clásica</h3>
+                                <p class="flavor-description">Salchicha de alta calidad envuelta en masa esponjosa, empanizada con panko.</p>
                                 <div class="flavor-price">$45 c/u</div>
                             </div>
                         </div>
                         
                         <!-- Banderilla Jalapeño -->
-                        <div class="flavor-item jalapeno">
+                        <div class="flavor-card jalapeno">
                             <img src="img/Alimentos/Banderilla%20Jalapeño.png" 
                                  alt="Banderilla Jalapeño" 
                                  class="flavor-image"
-                                 onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%22250%22 height%3D%22250%22 viewBox%3D%220 0 250 250%22%3E%3Crect fill%3D%22%23f5f5f5%22 width%3D%22250%22 height%3D%22250%22%2F%3E%3Ctext fill%3D%22%23999%22 font-family%3D%22sans-serif%22 font-size%3D%2220%22 dy%3D%2210.5%22 font-weight%3D%22bold%22 x%3D%2250%25%22 y%3D%2250%25%22 text-anchor%3D%22middle%22%3EImagen no disponible%3C%2Ftext%3E%3C%2Fsvg%3E'">
+                                 onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%22300%22 height%3D%22150%22 viewBox%3D%220 0 300 150%22%3E%3Crect fill%3D%22%23f5f5f5%22 width%3D%22300%22 height%3D%22150%22%2F%3E%3Ctext fill%3D%22%23999%22 font-family%3D%22sans-serif%22 font-size%3D%2212%22 dy%3D%223.5%22 font-weight%3D%22bold%22 x%3D%2250%25%22 y%3D%2250%25%22 text-anchor%3D%22middle%22%3EImagen%3C%2Ftext%3E%3C%2Fsvg%3E'">
                             <div class="flavor-content">
-                                <h3 class="flavor-name">Jalapeño</h3>
-                                <p class="flavor-description">Salchicha con trozos de jalapeño fresco para un toque picante. Acompañada de mayonesa chipotle ahumada.</p>
                                 <span class="flavor-type">Picante Medio</span>
+                                <h3 class="flavor-name">Jalapeño</h3>
+                                <p class="flavor-description">Salchicha con trozos de jalapeño fresco para un toque picante.</p>
                                 <div class="flavor-price">$45 c/u</div>
                             </div>
                         </div>
                         
                         <!-- Banderilla Queso Cheddar -->
-                        <div class="flavor-item cheddar">
+                        <div class="flavor-card cheddar">
                             <img src="img/Alimentos/Banderilla%20Cheddar.png" 
                                  alt="Banderilla Queso Cheddar" 
                                  class="flavor-image"
-                                 onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%22250%22 height%3D%22250%22 viewBox%3D%220 0 250 250%22%3E%3Crect fill%3D%22%23f5f5f5%22 width%3D%22250%22 height%3D%22250%22%2F%3E%3Ctext fill%3D%22%23999%22 font-family%3D%22sans-serif%22 font-size%3D%2220%22 dy%3D%2210.5%22 font-weight%3D%22bold%22 x%3D%2250%25%22 y%3D%2250%25%22 text-anchor%3D%22middle%22%3EImagen no disponible%3C%2Ftext%3E%3C%2Fsvg%3E'">
+                                 onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%22300%22 height%3D%22150%22 viewBox%3D%220 0 300 150%22%3E%3Crect fill%3D%22%23f5f5f5%22 width%3D%22300%22 height%3D%22150%22%2F%3E%3Ctext fill%3D%22%23999%22 font-family%3D%22sans-serif%22 font-size%3D%2212%22 dy%3D%223.5%22 font-weight%3D%22bold%22 x%3D%2250%25%22 y%3D%2250%25%22 text-anchor%3D%22middle%22%3EImagen%3C%2Ftext%3E%3C%2Fsvg%3E'">
                             <div class="flavor-content">
-                                <h3 class="flavor-name">Queso Cheddar</h3>
-                                <p class="flavor-description">Barra 100% de queso cheddar premium que ofrece el auténtico "efecto hilos" con cada mordisco.</p>
                                 <span class="flavor-type">Queso</span>
+                                <h3 class="flavor-name">Queso Cheddar</h3>
+                                <p class="flavor-description">Barra 100% de queso cheddar premium que ofrece el auténtico "efecto hilos".</p>
                                 <div class="flavor-price">$45 c/u</div>
                             </div>
                         </div>
                         
                         <!-- Banderilla Flammin Hot -->
-                        <div class="flavor-item flamin">
+                        <div class="flavor-card flamin">
                             <img src="img/Alimentos/Banderilla%20Flammin%20Hot.jpg" 
                                  alt="Banderilla Flammin Hot" 
                                  class="flavor-image"
-                                 onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%22250%22 height%3D%22250%22 viewBox%3D%220 0 250 250%22%3E%3Crect fill%3D%22%23f5f5f5%22 width%3D%22250%22 height%3D%22250%22%2F%3E%3Ctext fill%3D%22%23999%22 font-family%3D%22sans-serif%22 font-size%3D%2220%22 dy%3D%2210.5%22 font-weight%3D%22bold%22 x%3D%2250%25%22 y%3D%2250%25%22 text-anchor%3D%22middle%22%3EImagen no disponible%3C%2Ftext%3E%3C%2Fsvg%3E'">
+                                 onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%22300%22 height%3D%22150%22 viewBox%3D%220 0 300 150%22%3E%3Crect fill%3D%22%23f5f5f5%22 width%3D%22300%22 height%3D%22150%22%2F%3E%3Ctext fill%3D%22%23999%22 font-family%3D%22sans-serif%22 font-size%3D%2212%22 dy%3D%223.5%22 font-weight%3D%22bold%22 x%3D%2250%25%22 y%3D%2250%25%22 text-anchor%3D%22middle%22%3EImagen%3C%2Ftext%3E%3C%2Fsvg%3E'">
                             <div class="flavor-content">
-                                <h3 class="flavor-name">Flammin Hot</h3>
-                                <p class="flavor-description">Cubierta con una costra de papas Flamin' Hot para una explosión de calor. Servida con salsa ranch.</p>
                                 <span class="flavor-type">Extra Picante</span>
-                                <div class="flavor-price">$45 c/u</div>
-                            </div>
-                        </div>
-                        
-                        <!-- Banderilla Ramen -->
-                        <div class="flavor-item ramen">
-                            <img src="img/Alimentos/Banerilla%20Ramen.jpg" 
-                                 alt="Banderilla Ramen" 
-                                 class="flavor-image"
-                                 onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%22250%22 height%3D%22250%22 viewBox%3D%220 0 250 250%22%3E%3Crect fill%3D%22%23f5f5f5%22 width%3D%22250%22 height%3D%22250%22%2F%3E%3Ctext fill%3D%22%23999%22 font-family%3D%22sans-serif%22 font-size%3D%2220%22 dy%3D%2210.5%22 font-weight%3D%22bold%22 x%3D%2250%25%22 y%3D%2250%25%22 text-anchor%3D%22middle%22%3EImagen no disponible%3C%2Ftext%3E%3C%2Fsvg%3E'">
-                            <div class="flavor-content">
-                                <h3 class="flavor-name">Ramen</h3>
-                                <p class="flavor-description">Masa crujiente cubierta con fideos de ramen deshidratados para una experiencia textural única.</p>
-                                <span class="flavor-type">Crujiente</span>
+                                <h3 class="flavor-name">Flammin Hot</h3>
+                                <p class="flavor-description">Cubierta con una costra de papas Flamin' Hot para una explosión de calor.</p>
                                 <div class="flavor-price">$45 c/u</div>
                             </div>
                         </div>
@@ -1248,7 +1132,7 @@
         </div>
     </section>
 
-    <!-- Nueva Sección de Michi Burguers -->
+    <!-- Sección de Michi Burguers -->
     <section id="michiburguers" class="menu-section">
         <div class="container">
             <div class="section-header">
@@ -1257,86 +1141,65 @@
             </div>
             
             <div class="menu-container">
-                <div class="menu-header header-michirguesas">
+                <div class="menu-header header-michiburguers">
                     <h1><i class="fas fa-hamburger me-2"></i>Michi Burguers</h1>
                 </div>
                 
-                <div class="menu-section p-4">
-                    <div class="menu-category">
-                        <div class="category-title mb-4">
-                            <i class="fas fa-hamburger"></i>
-                            <h2>Nuestras Hamburguesas</h2>
-                        </div>
-                        
+                <div class="p-4">
+                    <div class="product-list">
                         <!-- Michi Burguer Sencilla -->
-                        <div class="menu-item">
-                            <div class="item-image-container">
-                                <img src="img/Alimentos/Michirguesa%20Sencilla.jpg" 
-                                     alt="Michi Burguer Sencilla" 
-                                     class="item-image"
-                                     loading="lazy"
-                                     onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%22300%22 height%3D%22200%22 viewBox%3D%220 0 300 200%22%3E%3Crect fill%3D%22%23f5f5f5%22 width%3D%22300%22 height%3D%22200%22%2F%3E%3Ctext fill%3D%22%23999%22 font-family%3D%22sans-serif%22 font-size%3D%2220%22 dy%3D%2210.5%22 font-weight%3D%22bold%22 x%3D%2250%25%22 y%3D%2250%25%22 text-anchor%3D%22middle%22%3EImagen no disponible%3C%2Ftext%3E%3C%2Fsvg%3E'">
-                            </div>
-                            <div class="item-content">
-                                <div class="item-info">
-                                    <h3 class="item-name">Michi Burguer Sencilla <span class="item-price">$80</span></h3>
-                                    <p class="item-description">Deliciosa hamburguesa de res a la parrilla, con queso, lechuga, jitomate, cebolla y nuestra salsa especial. Incluye papas a la francesa.</p>
-                                    <span class="item-badge">Clásica</span>
-                                </div>
+                        <div class="product-item">
+                            <img src="img/Alimentos/Michirguesa%20Sencilla.jpg" 
+                                 alt="Michi Burguer Sencilla" 
+                                 class="product-image"
+                                 loading="lazy"
+                                 onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%2280%22 height%3D%2280%22 viewBox%3D%220 0 80 80%22%3E%3Crect fill%3D%22%23f5f5f5%22 width%3D%2280%22 height%3D%2280%22%2F%3E%3Ctext fill%3D%22%23999%22 font-family%3D%22sans-serif%22 font-size%3D%2210%22 dy%3D%223.5%22 font-weight%3D%22bold%22 x%3D%2250%25%22 y%3D%2250%25%22 text-anchor%3D%22middle%22%3EImagen%3C%2Ftext%3E%3C%2Fsvg%3E'">
+                            <div class="product-info">
+                                <h3 class="product-name">Michi Burguer Sencilla <span class="product-price">$80</span></h3>
+                                <p class="product-description">Hamburguesa de res a la parrilla, con queso, lechuga, jitomate, cebolla y salsa especial.</p>
+                                <span class="product-badge">Clásica</span>
                             </div>
                         </div>
                         
                         <!-- Michi Burguer Chicken Tenders -->
-                        <div class="menu-item">
-                            <div class="item-image-container">
-                                <img src="img/Alimentos/Michirguesa%20Chicken.jpg" 
-                                     alt="Michi Burguer Chicken Tenders" 
-                                     class="item-image"
-                                     loading="lazy"
-                                     onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%22300%22 height%3D%22200%22 viewBox%3D%220 0 300 200%22%3E%3Crect fill%3D%22%23f5f5f5%22 width%3D%22300%22 height%3D%22200%22%2F%3E%3Ctext fill%3D%22%23999%22 font-family%3D%22sans-serif%22 font-size%3D%2220%22 dy%3D%2210.5%22 font-weight%3D%22bold%22 x%3D%2250%25%22 y%3D%2250%25%22 text-anchor%3D%22middle%22%3EImagen no disponible%3C%2Ftext%3E%3C%2Fsvg%3E'">
-                            </div>
-                            <div class="item-content">
-                                <div class="item-info">
-                                    <h3 class="item-name">Michi Burguer Chicken Tenders <span class="item-price">$95</span></h3>
-                                    <p class="item-description">Tenders de pollo crujientes con nuestra receta secreta, acompañados de lechuga, jitomate y mayonesa de la casa. Incluye papas a la francesa.</p>
-                                    <span class="item-badge">Especialidad</span>
-                                </div>
+                        <div class="product-item">
+                            <img src="img/Alimentos/Michirguesa%20Chicken.jpg" 
+                                 alt="Michi Burguer Chicken Tenders" 
+                                 class="product-image"
+                                 loading="lazy"
+                                 onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%2280%22 height%3D%2280%22 viewBox%3D%220 0 80 80%22%3E%3Crect fill%3D%22%23f5f5f5%22 width%3D%2280%22 height%3D%2280%22%2F%3E%3Ctext fill%3D%22%23999%22 font-family%3D%22sans-serif%22 font-size%3D%2210%22 dy%3D%223.5%22 font-weight%3D%22bold%22 x%3D%2250%25%22 y%3D%2250%25%22 text-anchor%3D%22middle%22%3EImagen%3C%2Ftext%3E%3C%2Fsvg%3E'">
+                            <div class="product-info">
+                                <h3 class="product-name">Michi Burguer Chicken Tenders <span class="product-price">$95</span></h3>
+                                <p class="product-description">Tenders de pollo crujientes con nuestra receta secreta, acompañados de lechuga y mayonesa.</p>
+                                <span class="product-badge">Especialidad</span>
                             </div>
                         </div>
                         
                         <!-- Michi Burguer Arrachera -->
-                        <div class="menu-item">
-                            <div class="item-image-container">
-                                <img src="img/Alimentos/Michirguesa%20Arrachera.jpg" 
-                                     alt="Michi Burguer Arrachera" 
-                                     class="item-image"
-                                     loading="lazy"
-                                     onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%22300%22 height%3D%22200%22 viewBox%3D%220 0 300 200%22%3E%3Crect fill%3D%22%23f5f5f5%22 width%3D%22300%22 height%3D%22200%22%2F%3E%3Ctext fill%3D%22%23999%22 font-family%3D%22sans-serif%22 font-size%3D%2220%22 dy%3D%2210.5%22 font-weight%3D%22bold%22 x%3D%2250%25%22 y%3D%2250%25%22 text-anchor%3D%22middle%22%3EImagen no disponible%3C%2Ftext%3E%3C%2Fsvg%3E'">
-                            </div>
-                            <div class="item-content">
-                                <div class="item-info">
-                                    <h3 class="item-name">Michi Burguer Arrachera <span class="item-price">$115</span></h3>
-                                    <p class="item-description">Exquisita hamburguesa de arrachera marinada, con queso manchego, aguacate, cebolla caramelizada y aderezo chipotle. Incluye papas a la francesa.</p>
-                                    <span class="item-badge">Premium</span>
-                                </div>
+                        <div class="product-item">
+                            <img src="img/Alimentos/Michirguesa%20Arrachera.jpg" 
+                                 alt="Michi Burguer Arrachera" 
+                                 class="product-image"
+                                 loading="lazy"
+                                 onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%2280%22 height%3D%2280%22 viewBox%3D%220 0 80 80%22%3E%3Crect fill%3D%22%23f5f5f5%22 width%3D%2280%22 height%3D%2280%22%2F%3E%3Ctext fill%3D%22%23999%22 font-family%3D%22sans-serif%22 font-size%3D%2210%22 dy%3D%223.5%22 font-weight%3D%22bold%22 x%3D%2250%25%22 y%3D%2250%25%22 text-anchor%3D%22middle%22%3EImagen%3C%2Ftext%3E%3C%2Fsvg%3E'">
+                            <div class="product-info">
+                                <h3 class="product-name">Michi Burguer Arrachera <span class="product-price">$115</span></h3>
+                                <p class="product-description">Arrachera marinada, con queso manchego, aguacate, cebolla caramelizada y aderezo chipotle.</p>
+                                <span class="product-badge">Premium</span>
                             </div>
                         </div>
                         
                         <!-- Michi Burguer Arrachera Doble -->
-                        <div class="menu-item">
-                            <div class="item-image-container">
-                                <img src="img/Alimentos/Michirguesa%20Arrachera%20Doble.jpg" 
-                                     alt="Michi Burguer Arrachera Doble" 
-                                     class="item-image"
-                                     loading="lazy"
-                                     onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%22300%22 height%3D%22200%22 viewBox%3D%220 0 300 200%22%3E%3Crect fill%3D%22%23f5f5f5%22 width%3D%22300%22 height%3D%22200%22%2F%3E%3Ctext fill%3D%22%23999%22 font-family%3D%22sans-serif%22 font-size%3D%2220%22 dy%3D%2210.5%22 font-weight%3D%22bold%22 x%3D%2250%25%22 y%3D%2250%25%22 text-anchor%3D%22middle%22%3EImagen no disponible%3C%2Ftext%3E%3C%2Fsvg%3E'">
-                            </div>
-                            <div class="item-content">
-                                <div class="item-info">
-                                    <h3 class="item-name">Michi Burguer Arrachera Doble <span class="item-price">$135</span></h3>
-                                    <p class="item-description">Doble porción de nuestra deliciosa arrachera, doble queso, aguacate, cebolla caramelizada y aderezo chipotle. Para los más hambrientos. Incluye papas a la francesa.</p>
-                                    <span class="item-badge">Doble Carne</span>
-                                </div>
+                        <div class="product-item">
+                            <img src="img/Alimentos/Michirguesa%20Arrachera%20Doble.jpg" 
+                                 alt="Michi Burguer Arrachera Doble" 
+                                 class="product-image"
+                                 loading="lazy"
+                                 onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%2280%22 height%3D%2280%22 viewBox%3D%220 0 80 80%22%3E%3Crect fill%3D%22%23f5f5f5%22 width%3D%2280%22 height%3D%2280%22%2F%3E%3Ctext fill%3D%22%23999%22 font-family%3D%22sans-serif%22 font-size%3D%2210%22 dy%3D%223.5%22 font-weight%3D%22bold%22 x%3D%2250%25%22 y%3D%2250%25%22 text-anchor%3D%22middle%22%3EImagen%3C%2Ftext%3E%3C%2Fsvg%3E'">
+                            <div class="product-info">
+                                <h3 class="product-name">Michi Burguer Arrachera Doble <span class="product-price">$135</span></h3>
+                                <p class="product-description">Doble porción de nuestra deliciosa arrachera, doble queso, aguacate y aderezo chipotle.</p>
+                                <span class="product-badge">Doble Carne</span>
                             </div>
                         </div>
                     </div>
@@ -1402,7 +1265,7 @@
         </div>
     </footer>
 
-    <!-- Botón flotante de WhatsApp con animación de pulso mejorada -->
+    <!-- Botón flotante de WhatsApp -->
     <a href="https://wa.me/5654362947?text=Hola%20Michi%20Crunch,%20me%20interesa%20hacer%20un%20pedido" 
        class="whatsapp-float" 
        target="_blank">
@@ -1482,54 +1345,13 @@
                 });
             });
             
-            // Mejorar la carga de imágenes
-            const images = document.querySelectorAll('img[loading="lazy"]');
-            
-            // Intersection Observer para lazy loading
-            if ('IntersectionObserver' in window) {
-                const imageObserver = new IntersectionObserver((entries, observer) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            const img = entry.target;
-                            img.src = img.dataset.src || img.src;
-                            img.classList.remove('lazy');
-                            imageObserver.unobserve(img);
-                        }
-                    });
-                });
-                
-                images.forEach(img => {
-                    // Guardar el src original en data-src
-                    if (!img.hasAttribute('data-src')) {
-                        img.setAttribute('data-src', img.src);
-                    }
-                    // Mostrar placeholder inicialmente
-                    img.src = 'data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%22300%22 height%3D%22200%22 viewBox%3D%220 0 300 200%22%3E%3Crect fill%3D%22%23f5f5f5%22 width%3D%22300%22 height%3D%22200%22%2F%3E%3C%2Fsvg%3E';
-                    imageObserver.observe(img);
-                });
-            }
-            
-            // Eventos para accesibilidad
-            document.querySelectorAll('.map-link, .wa-link').forEach(link => {
-                link.addEventListener('keypress', function(e) {
-                    if (e.key === 'Enter') {
-                        e.preventDefault();
-                        if (link.classList.contains('map-link')) {
-                            openGoogleMaps();
-                        } else {
-                            openWhatsApp();
-                        }
-                    }
-                });
-            });
-            
             // Modal para imágenes
             const modal = document.getElementById("imageModal");
             const modalImg = document.getElementById("modalImage");
             const closeModal = document.getElementsByClassName("close-modal")[0];
             
             // Agregar evento de clic a todas las imágenes
-            document.querySelectorAll('.item-image, .flavor-image').forEach(img => {
+            document.querySelectorAll('.product-image, .flavor-image').forEach(img => {
                 img.addEventListener('click', function() {
                     modal.style.display = "block";
                     modalImg.src = this.src;
