@@ -945,6 +945,1423 @@
                             <button class="add-to-order-btn" onclick="addToCart('michi-crispy')"><i class="fas fa-plus"></i> Añadir</button>
                         </div>
 
+                        <!-- Boneless y Alitas - VERSIÓN MODIFICADA -->
+                        <div class="product-item" data-id="boneless-alitas" data-name="Boneless y Alitas (6 Piezas)" data-price="85">
+                            <img src="img/Alimentos/Alitas.jpg" alt="Boneless y Alitas" class="product-image" loading="lazy" onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%2280%22 height%3D%2280%22 viewBox%3D%220 0 80 80%22%3E%3Crect fill%3D%22%23f5f5f5%22 width%3D%2280%22 height%3D%2280%22%2F%3E%3Ctext fill%3D%22%23999%22 font-family%3D%22sans-serif%22 font-size%3D%2210%22 dy%3D%223.5%22 font-weight%3D%22bold%22 x%3D%2250%25%22 y%3D%2250%25%22 text-anchor%3D%22middle%22%3EImagen%3C%2Ftext%3E%3C%2Fsvg%3E'">
+                            <div class="product-info">
+                                <h3 class="product-name">Boneless y Alitas <span class="product-price dynamic-price">$85</span></h3>
+                                <p class="product-description">Empanizado extra crocante y jugosidad al 100%. Cada bocado viene bañado en nuestras salsas.</p>
+                                <span class="product-badge">Más solicitado</span>
+                            </div>
+                            <div class="product-configurator">
+                                <select id="boneless-alitas-select" class="form-select form-select-sm" onchange="updateBonelessPrice()">
+                                    <option value="6" data-price="85">6 Piezas - $85</option>
+                                    <option value="10" data-price="125">10 Piezas - $125</option>
+                                    <option value="15" data-price="165">15 Piezas - $165</option>
+                                    <option value="20" data-price="235">20 Piezas - $235</option>
+                                </select>
+                                <button class="add-to-order-btn" onclick="addToCart('boneless-alitas')"><i class="fas fa-plus"></i> Añadir</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tabla de precios para Boneless/Alitas -->
+                    <div class="w-100 mt-3">
+                        <table class="pricing-table">
+                            <thead><tr><th>Piezas</th><th>Precio</th><th>Salsas Incluidas</th></tr></thead>
+                            <tbody>
+                                <tr><td>6 Piezas</td><td>$85</td><td>1 Salsa</td></tr>
+                                <tr><td>10 Piezas</td><td>$125</td><td>2 Salsas</td></tr>
+                                <tr><td>15 Piezas</td><td>$165</td><td>+ 2 Salsas</td></tr>
+                                <tr><td>20 Piezas</td><td>$235</td><td>+ 3 Salsas</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Sección de Salsas -->
+                    <div class="sauces-section mt-4">
+                        <h4 class="text-center mb-3"><i class="fas fa-pepper-hot me-2"></i>Nuestras Salsas</h4>
+                        <div class="sauce-item"><div class="sauce-icon"><i class="fas fa-pepper-hot"></i></div><div>Michi Fuego (Mango Habanero)</div></div>
+                        <div class="sauce-item"><div class="sauce-icon"><i class="fas fa-fire"></i></div><div>Michi Hot (Buffalo)</div></div>
+                        <div class="sauce-item"><div class="sauce-icon"><i class="fas fa-utensils"></i></div><div>Michi BBQ (Receta Original BBQ)</div></div>
+                        <div class="sauce-item"><div class="sauce-icon"><i class="fas fa-lemon"></i></div><div>Lemon Pepper</div></div>
+                        <div class="sauce-item"><div class="sauce-icon"><i class="fas fa-pepper-hot"></i></div><div>Cajún <span class="product-badge">Nuevo</span></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- Sección de Bebidas -->
+<section id="bebidas" class="menu-section">
+    <div class="container">
+        <div class="section-header"><h2 class="section-title">Bebidas Refrescantes</h2><p>Perfectas para acompañar tus snacks</p></div>
+        <div class="menu-container">
+            <div class="menu-header header-bebidas"><h1><i class="fas fa-glass-water me-2"></i>Bebidas</h1></div>
+            <div class="p-4">
+                <!-- Categoría de Mojitos -->
+                <div class="mb-4">
+                    <div class="category-title mb-3"><i class="fas fa-glass-martini-alt me-2"></i><h3>Mojitos 1L - $90 c/u</h3></div>
+                    <div class="product-list">
+                        <div class="product-item" data-id="mojito-frutos-rojos" data-name="Mojito Frutos Rojos" data-price="90">
+                            <img src="img/Bebidas/Mojito%20Frutos%20Rojos.jpg" alt="Mojito Frutos Rojos" class="product-image" loading="lazy" onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%2280%22 height%3D%2280%22 viewBox%3D%220 0 80 80%22%3E%3Crect fill%3D%22%23f5f5f5%22 width%3D%2280%22 height%3D%2280%22%2F%3E%3Ctext fill%3D%22%23999%22 font-family%3D%22sans-serif%22 font-size%3D%2210%22 dy%3D%223.5%22 font-weight%3D%22bold%22 x%3D%2250%25%22 y%3D%2250%25%22 text-anchor%3D%22middle%22%3EImagen%3C%2Ftext%3E%3C%2Fsvg%3E'">
+                            <div class="product-info"><h3 class="product-name">Frutos Rojos</h3><p class="product-description">Moras, frambuesas y arándanos macerados con hierbabuena, limón y burbujas juguetonas.</p><span class="product-badge">Recomendado</span></div>
+                            <button class="add-to-order-btn" onclick="addToCart('mojito-frutos-rojos')"><i class="fas fa-plus"></i> Añadir</button>
+                        </div>
+                        <div class="product-item" data-id="mojito-tradicional" data-name="Mojito Tradicional" data-price="90">
+                            <img src="img/Bebidas/mojito_Tradicional.jpg" alt="Mojito Tradicional" class="product-image" loading="lazy" onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%2280%22 height%3D%2280%22 viewBox%3D%220 0 80 80%22%3E%3Crect fill%3D%22%23f5f5f5%22 width%3D%2280%22 height%3D%2280%22%2F%3E%3Ctext fill%3D%22%23999%22 font-family%3D%22sans-serif%22 font-size%3D%2210%22 dy%3D%223.5%22 font-weight%3D%22bold%22 x%3D%2250%25%22 y%3D%2250%25%22 text-anchor%3D%22middle%22%3EImagen%3C%2Ftext%3E%3C%2Fsvg%3E'">
+                            <div class="product-info"><h3 class="product-name">Tradicional</h3><p class="product-description">Hierbabuena fresca, lima jugosa y un toque de dulce con burbujas alegres.</p><span class="product-badge">Recomendado</span></div>
+                            <button class="add-to-order-btn" onclick="addToCart('mojito-tradicional')"><i class="fas fa-plus"></i> Añadir</button>
+                        </div>
+                        <div class="product-item" data-id="mojito-tinto" data-name="Mojito Tinto" data-price="90">
+                            <img src="img/Bebidas/Mojito_Tinto.JPG" alt="Mojito Tinto" class="product-image" loading="lazy" onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%2280%22 height%3D%2280%22 viewBox%3D%220 0 80 80%22%3E%3Crect fill%3D%22%23f5f5f5%22 width%3D%2280%22 height%3D%2280%22%2F%3E%3Ctext fill%3D%22%23999%22 font-family%3D%22sans-serif%22 font-size%3D%2210%22 dy%3D%223.5%22 font-weight%3D%22bold%22 x%3D%2250%25%22 y%3D%2250%25%22 text-anchor%3D%22middle%22%3EImagen%3C%2Ftext%3E%3C%2Fsvg%3E'">
+                            <div class="product-info"><h3 class="product-name">Tinto</h3><p class="product-description">Pura pasión frutal con el toque ácido y vibrante de la maracuyá, mezclado con hierbabuena.</p><span class="product-badge">Nuevo</span></div>
+                            <button class="add-to-order-btn" onclick="addToCart('mojito-tinto')"><i class="fas fa-plus"></i> Añadir</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Categoría de Sodas Italianas -->
+                <div class="mb-4">
+                    <div class="category-title mb-3"><i class="fas fa-glass-water me-2"></i><h3>Sodas Italianas - $40 c/u</h3></div>
+                    <div class="product-list">
+                        <div class="product-item" data-id="soda-manzana" data-name="Soda Manzana Verde" data-price="40">
+                            <img src="img/Bebidas/Soda%20Manzana%20Verde.jpg" alt="Soda Manzana Verde" class="product-image" loading="lazy" onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%2280%22 height%3D%2280%22 viewBox%3D%220 0 80 80%22%3E%3Crect fill%3D%22%23f5f5f5%22 width%3D%2280%22 height%3D%2280%22%2F%3E%3Ctext fill%3D%22%23999%22 font-family%3D%22sans-serif%22 font-size%3D%2210%22 dy%3D%223.5%22 font-weight%3D%22bold%22 x%3D%2250%25%22 y%3D%2250%25%22 text-anchor%3D%22middle%22%3EImagen%3C%2Ftext%3E%3C%2Fsvg%3E'">
+                            <div class="product-info"><h3 class="product-name">Manzana Verde</h3><p class="product-description">Burbujas elegantes con el sabor jugoso de manzana verde, tan fresca como pescar hielos.</p><span class="product-badge">Más vendido</span></div>
+                            <button class="add-to-order-btn" onclick="addToCart('soda-manzana')"><i class="fas fa-plus"></i> Añadir</button>
+                        </div>
+                        <div class="product-item" data-id="soda-mora-azul" data-name="Soda Mora Azul" data-price="40">
+                            <img src="img/Bebidas/Soda%20Mora%20Azul.jpg" alt="Soda Mora Azul" class="product-image" loading="lazy" onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%2280%22 height%3D%2280%22 viewBox%3D%220 0 80 80%22%3E%3Crect fill%3D%22%23f5f5f5%22 width%3D%2280%22 height%3D%2280%22%2F%3E%3Ctext fill%3D%22%23999%22 font-family%3D%22sans-serif%22 font-size%3D%2210%22 dy%3D%223.5%22 font-weight%3D%22bold%22 x%3D%2250%25%22 y%3D%2250%25%22 text-anchor%3D%22middle%22%3EImagen%3C%2Ftext%3E%3C%2Fsvg%3E'">
+                            <div class="product-info"><h3 class="product-name">Mora Azul</h3><p class="product-description">Burbujas mágicas con el enigmático sabor de moras azules, tan adictivo como perseguir una sombra.</p><span class="product-badge">Más vendido</span></div>
+                            <button class="add-to-order-btn" onclick="addToCart('soda-mora-azul')"><i class="fas fa-plus"></i> Añadir</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Categoría de Agua Mineral -->
+                <div>
+                    <div class="category-title mb-3"><i class="fas fa-glass-water me-2"></i><h3>Agua Mineral - $40</h3></div>
+                    <div class="product-item" data-id="agua-mineral" data-name="Agua Mineral 1/2 Lt" data-price="40">
+                        <img src="img/Bebidas/Agua%20Mineral.png" alt="Agua Mineral" class="product-image" loading="lazy" onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%2280%22 height%3D%2280%22 viewBox%3D%220 0 80 80%22%3E%3Crect fill%3D%22%23f5f5f5%22 width%3D%2280%22 height%3D%2280%22%2F%3E%3Ctext fill%3D%22%23999%22 font-family%3D%22sans-serif%22 font-size%3D%2210%22 dy%3D%223.5%22 font-weight%3D%22bold%22 x%3D%2250%25%22 y%3D%2250%25%22 text-anchor%3D%22middle%22%3EImagen%3C%2Ftext%3E%3C%2Fsvg%3E'">
+                        <div class="product-info"><h3 class="product-name">Agua Mineral 1/2 Lt</h3><p class="product-description">Hidratación pura y refrescante, esencial como el agua para tu bebedero. Sin burbujas, solo frescura natural.</p><span class="product-badge">Saludable</span></div>
+                        <button class="add-to-order-btn" onclick="addToCart('agua-mineral')"><i class="fas fa-plus"></i> Añadir</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Sección de Banderillas -->
+    <section id="banderillas" class="menu-section">
+        <div class="container">
+            <div class="section-header"><h2 class="section-title">Banderillas Coreanas</h2><p>Deliciosas brochetas con sabores únicos que te transportarán a las calles de Seúl</p></div>
+            <div class="menu-container">
+                <div class="menu-header header-banderillas"><h1><i class="fas fa-drumstick-bite me-2"></i>Banderillas Coreanas</h1></div>
+                <div class="p-4">
+                    <div class="text-center mb-4">
+                        <h3 class="mb-3"><i class="fas fa-images me-2"></i>Nuestras Banderillas Coreanas</h3>
+                        <img src="img/Alimentos/Banderillas 2.JPG" alt="Todas nuestras banderillas coreanas" class="img-fluid rounded shadow" style="max-height: 400px; width: auto; cursor: pointer;" onclick="openImageModal(this.src)" loading="lazy" onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%22600%22 height%3D%22400%22 viewBox%3D%220 0 600 400%22%3E%3Crect fill%3D%22%23f5f5f5%22 width%3D%22600%22 height%3D%22400%22%2F%3E%3Ctext fill%3D%22%23999%22 font-family%3D%22sans-serif%22 font-size%3D%2216%22 dy%3D%223.5%22 font-weight%3D%22bold%22 x%3D%2250%25%22 y%3D%2250%25%22 text-anchor%3D%22middle%22%3EImagen de todas las banderillas%3C%2Ftext%3E%3C%2Fsvg%3E'">
+                        <p class="text-muted mt-2">Haz clic en la imagen para ampliar</p>
+                    </div>
+                    <div class="text-center mb-4">
+                        <h3 class="mb-3"><i class="fas fa-tags me-2"></i>Precios y Combinaciones</h3>
+                        <img src="img/Alimentos/Menu_Banderillas.JPG" alt="Precios y combinaciones de banderillas" class="img-fluid rounded shadow" style="max-height: 500px; width: auto; cursor: pointer;" onclick="openImageModal(this.src)" loading="lazy" onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%22600%22 height%3D%22500%22 viewBox%3D%220 0 600 500%22%3E%3Crect fill%3D%22%23f5f5f5%22 width%3D%22600%22 height%3D%22500%22%2F%3E%3Ctext fill%3D%22%23999%22 font-family%3D%22sans-serif%22 font-size%3D%2216%22 dy%3D%223.5%22 font-weight%3D%22bold%22 x%3D%2250%25%22 y%3D%2250%25%22 text-anchor%3D%22middle%22%3EPrecios y combinaciones%3C%2Ftext%3E%3C%2Fsvg%3E'">
+                        <p class="text-muted mt-2">Haz clic en la imagen para ampliar</p>
+                    </div>
+                    <div class="mb-4">
+                        <h3 class="text-center mb-3"><i class="fas fa-list-alt me-2"></i>Sabores Disponibles</h3>
+                        <div class="table-responsive">
+                            <table class="pricing-table">
+                                <thead><tr><th>Sabor</th><th>Descripción</th><th>Nivel Picante</th></tr></thead>
+                                <tbody>
+                                    <tr><td><strong>Clásica</strong></td><td>Salchicha de alta calidad envuelta en masa esponjosa, empanizada con panko</td><td><span class="badge bg-success">Suave</span></td></tr>
+                                    <tr><td><strong>Jalapeño</strong></td><td>Salchicha con trozos de jalapeño fresco para un toque picante</td><td><span class="badge bg-warning">Medio</span></td></tr>
+                                    <tr><td><strong>Queso Cheddar</strong></td><td>Barra 100% de queso cheddar premium que ofrece el auténtico "efecto hilos"</td><td><span class="badge bg-success">Suave</span></td></tr>
+                                    <tr><td><strong>Flammin Hot</strong></td><td>Cubierta con una costra de papas Flamin' Hot para una explosión de calor</td><td><span class="badge bg-danger">Picante</span></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="combo-section">
+                        <h3 class="combo-title"><i class="fas fa-star me-2"></i>Combos Miercóles</h3>
+                        <div class="combo-price">$100</div>
+                        <p class="mb-2">3 Banderillas Clasicas (Salchicha) Promocion Valida de 7 -10pm </p>
+                        <span class="combo-saving">Ahorras $20</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Michi Burguers -->
+    <section id="michiburguers" class="menu-section">
+        <div class="container">
+            <div class="section-header"><h2 class="section-title">Michi Burguers</h2><p>Hamburguesas deliciosas para satisfacer tu apetito felino</p></div>
+            <div class="menu-container">
+                <div class="menu-header header-michiburguers"><h1><i class="fas fa-hamburger me-2"></i>Michi Burguers</h1></div>
+                <div class="p-4">
+                    <div class="product-list">
+                        <div class="product-item" data-id="burger-sencilla" data-name="Michi Burguer Sencilla" data-price="80">
+                            <img src="img/Alimentos/hamburguesares.jpg" alt="Michi Burguer Sencilla" class="product-image" loading="lazy" onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%2280%22 height%3D%2280%22 viewBox%3D%220 0 80 80%22%3E%3Crect fill%3D%22%23f5f5f5%22 width%3D%2280%22 height%3D%2280%22%2F%3E%3Ctext fill%3D%22%23999%22 font-family%3D%22sans-serif%22 font-size%3D%2210%22 dy%3D%223.5%22 font-weight%3D%22bold%22 x%3D%2250%25%22 y%3D%2250%25%22 text-anchor%3D%22middle%22%3EImagen%3C%2Ftext%3E%3C%2Fsvg%3E'">
+                            <div class="product-info"><h3 class="product-name">Michi Burguer Sencilla <span class="product-price">$80</span></h3><p class="product-description">Hamburguesa de res a la parrilla, con queso, lechuga, jitomate, cebolla y salsa especial.</p><span class="product-badge">Clásica</span></div>
+                            <button class="add-to-order-btn" onclick="addToCart('burger-sencilla')"><i class="fas fa-plus"></i> Añadir</button>
+                        </div>
+                        <div class="product-item" data-id="burger-hawaiana" data-name="Michi Burguer Hawaiana" data-price="95">
+                            <img src="img/Alimentos/hamburguesaHawaiana.jpg" alt="Michi Burguer Hawaiana" class="product-image" loading="lazy" onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%2280%22 height%3D%2280%22 viewBox%3D%220 0 80 80%22%3E%3Crect fill%3D%22%23f5f5f5%22 width%3D%2280%22 height%3D%2280%22%2F%3E%3Ctext fill%3D%22%23999%22 font-family%3D%22sans-serif%22 font-size%3D%2210%22 dy%3D%223.5%22 font-weight%3D%22bold%22 x%3D%2250%25%22 y%3D%2250%25%22 text-anchor%3D%22middle%22%3EImagen%3C%2Ftext%3E%3C%2Fsvg%3E'">
+                            <div class="product-info"><h3 class="product-name">Michi Burguer Hawaiana <span class="product-price">$95</span></h3><p class="product-description">Exquisita hamburguesa de res con piña caramelizada, queso derretido, tocino crujiente y nuestra salsa agridulce especial. Un viaje tropical en cada bocado.</p><span class="product-badge">Recomendada</span></div>
+                            <button class="add-to-order-btn" onclick="addToCart('burger-hawaiana')"><i class="fas fa-plus"></i> Añadir</button>
+                        </div>
+                        <div class="product-item" data-id="burger-arrachera" data-name="Michi Burguer Arrachera" data-price="115">
+                            <img src="img/Alimentos/Hambuerguesa_Dobe_arrachera.jpg" alt="Michi Burguer Arrachera" class="product-image" loading="lazy" onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%2280%22 height%3D%2280%22 viewBox%3D%220 0 80 80%22%3E%3Crect fill%3D%22%23f5f5f5%22 width%3D%2280%22 height%3D%2280%22%2F%3E%3Ctext fill%3D%22%23999%22 font-family%3D%22sans-serif%22 font-size%3D%2210%22 dy%3D%223.5%22 font-weight%3D%22bold%22 x%3D%2250%25%22 y%3D%2250%25%22 text-anchor%3D%22middle%22%3EImagen%3C%2Ftext%3E%3C%2Fsvg%3E'">
+                            <div class="product-info"><h3 class="product-name">Michi Burguer Arrachera <span class="product-price">$115</span></h3><p class="product-description">Arrachera marinada, con queso manchego, aguacate, cebolla caramelizada y aderezo chipotle.</p><span class="product-badge">Premium</span></div>
+                            <button class="add-to-order-btn" onclick="addToCart('burger-arrachera')"><i class="fas fa-plus"></i> Añadir</button>
+                        </div>
+                        <div class="product-item" data-id="burger-arrachera-doble" data-name="Michi Burguer Arrachera Doble" data-price="135">
+                            <img src="img/Alimentos/Hambuerguesa_Dobe_arrachera.jpg" alt="Michi Burguer Arrachera Doble" class="product-image" loading="lazy" onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%2280%22 height%3D%2280%22 viewBox%3D%220 0 80 80%22%3E%3Crect fill%3D%22%23f5f5f5%22 width%3D%2280%22 height%3D%2280%22%2F%3E%3Ctext fill%3D%22%23999%22 font-family%3D%22sans-serif%22 font-size%3D%2210%22 dy%3D%223.5%22 font-weight%3D%22bold%22 x%3D%2250%25%22 y%3D%2250%25%22 text-anchor%3D%22middle%22%3EImagen%3C%2Ftext%3E%3C%2Fsvg%3E'">
+                            <div class="product-info"><h3 class="product-name">Michi Burguer Arrachera Doble <span class="product-price">$135</span></h3><p class="product-description">Doble porción de nuestra deliciosa arrachera, doble queso, aguacate y aderezo chipotle.</p><span class="product-badge">Doble Carne</span></div>
+                            <button class="add-to-order-btn" onclick="addToCart('burger-arrachera-doble')"><i class="fas fa-plus"></i> Añadir</button>
+                        </div>
+                    </div>
+                    <div class="sauces-section mt-4">
+                        <h4 class="text-center mb-3"><i class="fas fa-info-circle me-2"></i>Todas nuestras Michi Burguers incluyen:</h4>
+                        <div class="sauce-item"><div class="sauce-icon"><i class="fas fa-check"></i></div><div>Lechuga fresca y jitomate</div></div>
+                        <div class="sauce-item"><div class="sauce-icon"><i class="fas fa-check"></i></div><div>Cebolla</div></div>
+                        <div class="sauce-item"><div class="sauce-icon"><i class="fas fa-check"></i></div><div>Papas a la francesa</div></div>
+                        <div class="sauce-item"><div class="sauce-icon"><i class="fas fa-check"></i></div><div>Salsa especial de la casa</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0"><img src="img/Michi%20Crunch_logo.jpeg" alt="Michi Crunch" class="mb-3" style="max-height: 80px;"><p>Deliciosos snacks coreanos para disfrutar en cualquier momento</p></div>
+                <div class="col-md-4 mb-4 mb-md-0"><h5>Horario</h5><p><i class="fas fa-clock me-2"></i>Jueves y Viernes</p><p>7:00pm - 11:00pm</p></div>
+                <div class="col-md-4"><h5>Contacto</h5><p class="mb-1"><i class="fas fa-map-marker-alt me-2"></i><span class="map-link" onclick="openGoogleMaps()">Ernesto Cortazar Mz86LT602</span></p><p class="mb-1"><i class="fab fa-whatsapp me-2"></i><span class="wa-link" onclick="openWhatsApp()">56 5436 2947</span></p></div>
+            </div>
+            <hr class="my-4" style="border-color: rgba(255,255,255,0.1);">
+            <p class="mb-0">&copy; 2023 Michi Crunch. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Carrito de Compras Flotante y Panel -->
+    <div id="shopping-cart"><i class="fas fa-shopping-cart fa-lg"></i><span id="cart-count">0</span></div>
+    <div id="cart-panel">
+        <div class="cart-header"><h4>Mi Pedido</h4><i class="fas fa-times fa-lg" id="close-cart-btn"></i></div>
+        <div class="cart-items" id="cart-items-container"><p class="empty-cart-message">Tu carrito está vacío</p></div>
+        <div class="cart-footer">
+            <input type="text" id="customer-name-input" class="customer-name-input" placeholder="¿Cuál es tu nombre?">
+            
+            <!-- NUEVO: Selector de método de pago -->
+            <div class="payment-method">
+                <div class="payment-method-title">Método de pago</div>
+                <div class="payment-option">
+                    <input type="radio" id="payment-cash" name="payment-method" value="efectivo" checked>
+                    <label for="payment-cash">Efectivo</label>
+                </div>
+                <div class="payment-option">
+                    <input type="radio" id="payment-transfer" name="payment-method" value="transferencia">
+                    <label for="payment-transfer">Transferencia Electrónica</label>
+                </div>
+            </div>
+
+            <div class="cart-total">Total: $<span id="cart-total">0</span></div>
+            <button class="send-order-btn" onclick="sendOrderViaWhatsApp()"><i class="fab fa-whatsapp"></i> Enviar Pedido</button>
+        </div>
+    </div>
+
+    <!-- Botón flotante de WhatsApp (Original - Oculto) -->
+    <a href="https://wa.me/5654362947?text=Hola%20Michi%20Crunch,%20me%20interesa%20hacer%20un%20pedido" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <div class="whatsapp-text">Haz tu pedido</div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Lógica del Carrito de Compras
+        let cart = [];
+
+        function addToCart(productId) {
+            const productElement = document.querySelector(`[data-id="${productId}"]`);
+            const name = productElement.dataset.name;
+            const price = parseInt(productElement.dataset.price);
+
+            const existingItem = cart.find(item => item.id === productId && item.name === name);
+
+            if (existingItem) {
+                existingItem.quantity++;
+            } else {
+                cart.push({ id: productId, name, price, quantity: 1, notes: '' });
+            }
+
+            updateCartUI();
+            animateCartIcon();
+            // NUEVO: Mostrar notificación toast
+            showToast("¡Producto añadido al pedido!");
+        }
+
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            updateCartUI();
+        }
+
+        function changeQuantity(productId, change) {
+            const item = cart.find(item => item.id === productId);
+            if (item) {
+                item.quantity += change;
+                if (item.quantity <= 0) {
+                    removeFromCart(productId);
+                } else {
+                    updateCartUI();
+                }
+            }
+        }
+
+        function updateItemNotes(productId, notes) {
+            const item = cart.find(item => item.id === productId);
+            if (item) {
+                item.notes = notes;
+            }
+        }
+
+        function updateCartUI() {
+            const cartItemsContainer = document.getElementById('cart-items-container');
+            const cartCountElement = document.getElementById('cart-count');
+            const cartTotalElement = document.getElementById('cart-total');
+
+            cartItemsContainer.innerHTML = '';
+            let total = 0;
+            let itemCount = 0;
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<p class="empty-cart-message">Tu carrito está vacío</p>';
+            } else {
+                cart.forEach(item => {
+                    const itemTotal = item.price * item.quantity;
+                    total += itemTotal;
+                    itemCount += item.quantity;
+
+                    const cartItemElement = document.createElement('div');
+                    cartItemElement.classList.add('cart-item');
+                    cartItemElement.innerHTML = `
+                        <div class="cart-item-info">
+                            <div class="cart-item-name">${item.name}</div>
+                            <div class="cart-item-price">$${item.price} c/u</div>
+                            <textarea class="cart-item-notes" placeholder="Ej: Aderezos, sin cebolla, extra queso..." oninput="updateItemNotes('${item.id}', this.value)">${item.notes}</textarea>
+                        </div>
+                        <div class="cart-item-actions">
+                            <button class="quantity-btn" onclick="changeQuantity('${item.id}', -1)">-</button>
+                            <span class="cart-item-quantity">${item.quantity}</span>
+                            <button class="quantity-btn" onclick="changeQuantity('${item.id}', 1)">+</button>
+                            <button class="quantity-btn" onclick="removeFromCart('${item.id}')" style="margin-left: 10px; background-color: #dc3545; color: white; border-color: #dc3545;"><i class="fas fa-trash"></i></button>
+                        </div>
+                    `;
+                    cartItemsContainer.appendChild(cartItemElement);
+                });
+            }
+
+            cartCountElement.textContent = itemCount;
+            cartTotalElement.textContent = total;
+        }
+
+        function animateCartIcon() {
+            const cartIcon = document.getElementById('shopping-cart');
+            cartIcon.style.transform = 'scale(1.2)';
+            setTimeout(() => { cartIcon.style.transform = 'scale(1)'; }, 200);
+        }
+
+        // NUEVO: Función para mostrar la notificación Toast
+        function showToast(message) {
+            const toast = document.getElementById('toast-notification');
+            toast.textContent = message;
+            toast.classList.add('show');
+
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000); // La notificación se mostrará por 3 segundos
+        }
+
+        // NUEVO: Función para actualizar el precio de Boneless y Alitas dinámicamente
+        function updateBonelessPrice() {
+            const selectElement = document.getElementById('boneless-alitas-select');
+            const productItem = document.querySelector('[data-id="boneless-alitas"]');
+            const priceSpan = productItem.querySelector('.dynamic-price');
+            
+            const selectedOption = selectElement.options[selectElement.selectedIndex];
+            const newPrice = selectedOption.getAttribute('data-price');
+            const pieces = selectedOption.value;
+            
+            priceSpan.textContent = `$${newPrice}`;
+            productItem.setAttribute('data-price', newPrice);
+            productItem.setAttribute('data-name', `Boneless y Alitas (${pieces} Piezas)`);
+        }
+
+        function sendOrderViaWhatsApp() {
+            if (cart.length === 0) {
+                alert('Tu carrito está vacío. Añade productos antes de enviar el pedido.');
+                return;
+            }
+
+            const customerNameInput = document.getElementById('customer-name-input');
+            const customerName = customerNameInput.value.trim();
+
+            if (customerName === '') {
+                alert('Por favor, ingresa tu nombre antes de enviar el pedido.');
+                customerNameInput.focus();
+                return;
+            }
+
+            // NUEVO: Validación y obtención del método de pago
+            const paymentMethod = document.querySelector('input[name="payment-method"]:checked').value;
+            if (!paymentMethod) {
+                alert('Por favor, selecciona un método de pago.');
+                return;
+            }
+
+            // NÚMERO DE WHATSAPP DEL NEGOCIO
+            const phoneNumber = '5654362947';
+            let message = `¡Hola, soy ${customerName}! Quiero realizar el siguiente pedido:\n\n`;
+            let total = 0;
+
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                message += `*${item.quantity}x ${item.name}* - $${item.price} c/u = $${itemTotal}\n`;
+                
+                if (item.notes.trim() !== '') {
+                    message += `> Notas: ${item.notes}\n`;
+                }
+                
+                total += itemTotal;
+            });
+
+            message += `\n*Total a pagar: $${total}*\n`;
+            
+            // NUEVO: Añadir estatus de pago si es transferencia
+            if (paymentMethod === 'transferencia') {
+                message += `\n**Estado del pedido: Pendiente por Pago**`;
+            }
+
+            message += '\n\n¡Gracias!';
+
+            const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+        }
+
+        // Event Listeners para el carrito
+        document.getElementById('shopping-cart').addEventListener('click', function() {
+            document.getElementById('cart-panel').classList.add('open');
+        });
+
+        document.getElementById('close-cart-btn').addEventListener('click', function() {
+            document.getElementById('cart-panel').classList.remove('open');
+        });
+
+        document.addEventListener('click', function(event) {
+            const cartPanel = document.getElementById('cart-panel');
+            const cartIcon = document.getElementById('shopping-cart');
+            if (!cartPanel.contains(event.target) && !cartIcon.contains(event.target)) {
+                cartPanel.classList.remove('open');
+            }
+        });
+
+        // Funciones de utilidad
+        function openGoogleMaps() { window.open('https://maps.app.goo.gl/8E9CvmUnnDv9G7v27', '_blank'); }
+        function openWhatsApp() {
+            const phoneNumber = '5654362947';
+            const message = 'Hola Michi Crunch, me interesa hacer un pedido...';
+            const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+        }
+        
+        // Sistema de navegación por pestañas
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuTabs = document.querySelectorAll('.menu-tab');
+            
+            menuTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    menuTabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    const targetId = this.getAttribute('data-target');
+                    document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+            
+            window.addEventListener('scroll', function() {
+                const sections = document.querySelectorAll('.menu-section');
+                const navLinks = document.querySelectorAll('.nav-link');
+                const menuTabs = document.querySelectorAll('.menu-tab');
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (pageYOffset >= (sectionTop - 150)) { current = section.getAttribute('id'); }
+                });
+                navLinks.forEach(link => { link.classList.remove('active'); if (link.getAttribute('href') === `#${current}`) { link.classList.add('active'); } });
+                menuTabs.forEach(tab => { tab.classList.remove('active'); if (tab.getAttribute('data-target') === current) { tab.classList.add('active'); } });
+            });
+            
+            // Modal para imágenes
+            const modal = document.getElementById("imageModal"); const modalImg = document.getElementById("modalImage"); const closeModal = document.getElementsByClassName("close-modal")[0];
+            window.openImageModal = function(src) { modal.style.display = "block"; modalImg.src = src; }
+            closeModal.onclick = function() { modal.style.display = "none"; }
+            modal.onclick = function(event) { if (event.target === modal) { modal.style.display = "none"; } }
+            document.addEventListener('keydown', function(event) { if (event.key === "Escape" && modal.style.display === "block") { modal.style.display = "none"; } });
+
+            // NUEVO: Establecer el precio inicial para Boneless y Alitas
+            updateBonelessPrice();
+        });
+    </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michi Crunch - Menú Digital</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #FF6B6B;
+            --secondary-color: #4ECDC4;
+            --dark-color: #292F36;
+            --light-color: #F7FFF7;
+            --accent-color: #FFBE0B;
+            --whatsapp-color: #25D366;
+            --snacks-color: #FFA500;
+            --drinks-color: #4ECDC4;
+            --banderillas-color: #FF6B6B;
+            --burgers-color: #8A2BE2;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            background-color: #f8f9fa;
+        }
+        
+        /* Componente: Navbar */
+        .navbar {
+            background-color: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 0.5rem 0;
+        }
+        
+        .nav-link {
+            color: var(--dark-color);
+            font-weight: 500;
+            margin: 0 8px;
+            position: relative;
+            transition: var(--transition);
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            transition: width 0.3s ease;
+            border-radius: 2px;
+        }
+        
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
+        /* Componente: Hero Section */
+        .hero-section {
+            min-height: 100vh;
+            padding-top: 80px;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(255,107,107,0.1) 0%, rgba(78,205,196,0.1) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            top: -50%;
+            left: -50%;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FF6B6B' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            animation: backgroundMove 60s linear infinite;
+            z-index: -1;
+        }
+        
+        @keyframes backgroundMove {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .logo-img {
+            max-height: 150px;
+            width: auto;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.1));
+        }
+        
+        .category-btn {
+            background: white;
+            border: none;
+            border-radius: 50px;
+            padding: 12px 25px;
+            margin: 0 8px 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: var(--transition);
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .category-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+        
+        .category-btn i {
+            margin-right: 8px;
+            font-size: 1.2rem;
+        }
+        
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--dark-color);
+            animation: bounce 2s infinite;
+        }
+        
+        /* Componente: Menu Tabs */
+        .menu-tabs {
+            position: sticky;
+            top: 80px;
+            z-index: 900;
+            background: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+        }
+        
+        .menu-tab {
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            margin: 0 5px;
+            font-weight: 500;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        
+        .menu-tab.active {
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            box-shadow: 0 4px 15px rgba(255,107,107,0.3);
+        }
+        
+        /* Componente: Menu Section */
+        .menu-section {
+            padding: 100px 0;
+        }
+        
+        .section-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .section-title {
+            font-weight: 700;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+            font-size: 2.5rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 4px;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            border-radius: 2px;
+        }
+        
+        /* Componente: Menu Container */
+        .menu-container {
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            overflow: hidden;
+            margin: 0 auto;
+            max-width: 900px;
+            transition: var(--transition);
+        }
+        
+        .menu-container:hover {
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+        
+        .menu-header {
+            padding: 2.5rem;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .menu-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0,0,0,0.2) 0%, transparent 100%);
+            z-index: 1;
+        }
+        
+        .menu-header h1 {
+            position: relative;
+            z-index: 2;
+            font-weight: 700;
+            font-size: 2.2rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .header-snacks { background: linear-gradient(135deg, var(--snacks-color), #FF8C00); }
+        .header-bebidas { background: linear-gradient(135deg, var(--drinks-color), #2D9C95); }
+        .header-banderillas { background: linear-gradient(135deg, var(--banderillas-color), #E55656); }
+        .header-michiburguers { background: linear-gradient(135deg, var(--burgers-color), #6A11CB); }
+        
+        /* Nuevo diseño: Lista compacta de productos */
+        .product-list {
+            display: grid;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .product-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            border-radius: 12px;
+            background: #f8f9fa;
+            transition: var(--transition);
+            cursor: pointer;
+            border-left: 4px solid transparent;
+        }
+        
+        .product-item:hover {
+            transform: translateX(5px);
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-left-color: var(--primary-color);
+        }
+        
+        .product-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+            object-fit: cover;
+            margin-right: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .product-info {
+            flex: 1;
+        }
+        
+        .product-name {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            color: var(--dark-color);
+            font-size: 1.1rem;
+        }
+        
+        .product-description {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+        
+        .product-price {
+            font-weight: 700;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+        
+        .product-badge {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--accent-color), #FFD166);
+            color: #333;
+            padding: 0.2rem 0.6rem;
+            border-radius: 15px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+        
+        /* NUEVO: Botón de añadir al pedido */
+        .add-to-order-btn {
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 8px 16px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 10px rgba(255,107,107,0.3);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .add-to-order-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(255,107,107,0.4);
+        }
+        
+        /* NUEVO: Estilos para el configurador de productos */
+        .product-configurator {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: stretch;
+        }
+
+        .product-configurator .form-select {
+            border-radius: 50px;
+            border: 1px solid var(--primary-color);
+            font-weight: 500;
+            text-align: center;
+            padding: 0.375rem 1rem;
+        }
+
+        .product-configurator .form-select:focus {
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 0.2rem rgba(78, 205, 196, 0.25);
+        }
+        
+        /* Diseño para banderillas */
+        .flavor-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .flavor-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        
+        .flavor-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .flavor-image {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+        
+        .flavor-content {
+            padding: 1.2rem;
+        }
+        
+        .flavor-name {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+        
+        .flavor-description {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+        }
+        
+        .flavor-price {
+            font-weight: 700;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+        
+        .flavor-type {
+            display: inline-block;
+            padding: 0.3rem 0.7rem;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            background-color: #ffecec;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Tabla de precios */
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .pricing-table th {
+            background-color: var(--accent-color);
+            color: #333;
+            font-weight: 700;
+            padding: 0.75rem;
+            text-align: center;
+        }
+        
+        .pricing-table td {
+            padding: 0.75rem;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .pricing-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .pricing-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        /* Sección de salsas */
+        .sauces-section {
+            background: linear-gradient(135deg, rgba(255,190,11,0.15), rgba(255,190,11,0.05));
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            border: 2px dashed var(--accent-color);
+        }
+        
+        .sauce-item {
+            display: flex;
+            align-items: center;
+            padding: 0.5rem;
+            margin-bottom: 0.5rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .sauce-item:hover {
+            background-color: rgba(255, 190, 11, 0.2);
+        }
+        
+        .sauce-icon {
+            margin-right: 1rem;
+            color: var(--primary-color);
+            width: 25px;
+            text-align: center;
+        }
+        
+        /* Componente: Combo Section */
+        .combo-section {
+            background: linear-gradient(135deg, rgba(255,190,11,0.15), rgba(255,190,11,0.05));
+            border-radius: 15px;
+            padding: 2rem;
+            margin-top: 2.5rem;
+            text-align: center;
+            border: 2px dashed var(--accent-color);
+        }
+        
+        .combo-title {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .combo-price {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .combo-saving {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--accent-color), #FFD166);
+            color: #333;
+            padding: 0.4rem 1.2rem;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-top: 0.5rem;
+            box-shadow: 0 3px 8px rgba(255,190,11,0.3);
+        }
+        
+        /* Componente: Footer */
+        .footer {
+            background: linear-gradient(135deg, var(--dark-color), #1A1F25);
+            color: white;
+            padding: 3rem 0 2rem;
+            text-align: center;
+        }
+        
+        .footer i {
+            width: 1.25rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .map-link, .wa-link {
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .map-link:hover, .wa-link:hover {
+            transform: translateY(-2px);
+        }
+        
+        .map-link:hover {
+            color: var(--secondary-color);
+        }
+        
+        .wa-link:hover {
+            color: var(--whatsapp-color);
+        }
+        
+        .fa-whatsapp {
+            color: var(--whatsapp-color);
+        }
+        
+        /* NUEVO: Carrito de Compras Flotante */
+        #shopping-cart {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            z-index: 1001;
+            transition: var(--transition);
+        }
+
+        #shopping-cart:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(255, 107, 107, 0.7);
+        }
+
+        #cart-count {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: var(--accent-color);
+            color: var(--dark-color);
+            font-size: 0.8rem;
+            font-weight: bold;
+            padding: 3px 7px;
+            border-radius: 50%;
+            min-width: 22px;
+            text-align: center;
+        }
+
+        /* NUEVO: Panel del Carrito */
+        #cart-panel {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 400px;
+            height: 100%;
+            background-color: white;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+            z-index: 1002;
+            transition: right 0.4s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #cart-panel.open {
+            right: 0;
+        }
+
+        .cart-header {
+            padding: 1.5rem;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cart-items {
+            flex-grow: 1;
+            overflow-y: auto;
+            padding: 1rem;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 0.75rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cart-item-info {
+            flex-grow: 1;
+            margin-right: 1rem;
+        }
+
+        .cart-item-name {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .cart-item-price {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* NUEVO: Estilo para el campo de notas */
+        .cart-item-notes {
+            width: 100%;
+            margin-top: 0.5rem;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-family: 'Poppins', sans-serif;
+            resize: none;
+            transition: var(--transition);
+        }
+
+        .cart-item-notes:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 5px rgba(255, 107, 107, 0.2);
+        }
+
+        .cart-item-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-shrink: 0;
+        }
+
+        .quantity-btn {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            border: 1px solid var(--primary-color);
+            background-color: white;
+            color: var(--primary-color);
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .quantity-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .cart-item-quantity {
+            font-weight: 600;
+            min-width: 20px;
+            text-align: center;
+        }
+
+        .cart-footer {
+            padding: 1.5rem;
+            border-top: 2px solid #eee;
+        }
+
+        /* NUEVO: Estilo para el campo de nombre del cliente */
+        .customer-name-input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 1rem;
+            transition: var(--transition);
+        }
+
+        .customer-name-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 5px rgba(255, 107, 107, 0.2);
+        }
+        
+        /* NUEVO: Estilo para el selector de método de pago */
+        .payment-method {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            background-color: #f8f9fa;
+        }
+
+        .payment-method-title {
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+            color: var(--dark-color);
+        }
+
+        .payment-option {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+        }
+
+        .payment-option input[type="radio"] {
+            margin-right: 0.75rem;
+            cursor: pointer;
+        }
+
+        .payment-option label {
+            cursor: pointer;
+            margin-bottom: 0;
+            font-weight: 500;
+        }
+
+        .cart-total {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+            text-align: right;
+        }
+
+        .send-order-btn {
+            width: 100%;
+            padding: 1rem;
+            background-color: var(--whatsapp-color);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .send-order-btn:hover {
+            background-color: #128C7E;
+            transform: translateY(-2px);
+        }
+
+        .empty-cart-message {
+            text-align: center;
+            padding: 2rem;
+            color: #999;
+        }
+        
+        /* NUEVO: Estilo para la notificación Toast */
+        #toast-notification {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-100px);
+            background-color: #28a745;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4);
+            z-index: 2000;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+            font-weight: 600;
+        }
+
+        #toast-notification.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+        
+        /* Componente: WhatsApp Float (Original - Oculto) */
+        .whatsapp-float { display: none; }
+        .whatsapp-text { display: none; }
+        
+        /* Modal para imágenes */
+        .image-modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            padding-top: 50px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.9);
+        }
+        
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 80vh;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(255,255,255,0.2);
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        
+        .close-modal:hover, .close-modal:focus { color: #bbb; cursor: pointer; }
+        
+        /* Responsive Design */
+        @media (min-width: 768px) {
+            .product-list { grid-template-columns: 1fr; }
+            .flavor-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .section-title { font-size: 2rem; }
+            .menu-tab { padding: 0.6rem 1.2rem; font-size: 0.9rem; }
+            #cart-panel { width: 100%; right: -100%; }
+            .pricing-table { font-size: 0.85rem; }
+            .pricing-table th, .pricing-table td { padding: 0.5rem; }
+            .flavor-grid { grid-template-columns: 1fr; }
+            .product-image { width: 70px; height: 70px; margin-right: 1rem; }
+        }
+        
+        @media (max-width: 576px) {
+            .menu-section { padding: 80px 0; }
+            .menu-header h1 { font-size: 1.8rem; }
+            .category-title h2 { font-size: 1.5rem; }
+            .product-name { font-size: 1rem; }
+            .product-description { font-size: 0.8rem; }
+            .category-btn { padding: 10px 20px; font-size: 0.9rem; margin: 0 5px 10px; }
+            .product-item { padding: 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- NUEVO: Notificación Toast -->
+    <div id="toast-notification">¡Producto añadido al pedido!</div>
+
+    <!-- Modal para imágenes -->
+    <div id="imageModal" class="image-modal"><span class="close-modal">&times;</span><img class="modal-content" id="modalImage"></div>
+
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="#inicio"><img src="img/Michi%20Crunch_logo.jpeg" alt="Michi Crunch" height="70"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#inicio">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#snacks">Snacks</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#bebidas">Bebidas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#banderillas">Banderillas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#michiburguers">Michi Burguers</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección de Inicio -->
+    <section id="inicio" class="hero-section">
+        <div class="container text-center">
+            <img src="img/Michi%20Crunch_logo.jpeg" alt="Michi Crunch" class="logo-img">
+            <h1 class="display-4 fw-bold mb-3">Michi Crunch</h1>
+            <p class="lead mb-5">Deliciosos snacks para disfrutar en cualquier momento</p>
+            <div class="d-flex flex-wrap justify-content-center">
+                <a href="#snacks" class="category-btn"><i class="fas fa-utensils me-2"></i>Snacks</a>
+                <a href="#bebidas" class="category-btn"><i class="fas fa-glass-water me-2"></i>Bebidas</a>
+                <a href="#banderillas" class="category-btn"><i class="fas fa-drumstick-bite me-2"></i>Banderillas</a>
+                <a href="#michiburguers" class="category-btn"><i class="fas fa-hamburger me-2"></i>Michi Burguers</a>
+            </div>
+            <div class="scroll-indicator"><i class="fas fa-chevron-down fa-2x"></i></div>
+        </div>
+    </section>
+
+    <!-- Navegación por pestañas -->
+    <div class="menu-tabs d-none d-md-flex justify-content-center">
+        <div class="menu-tab active" data-target="snacks">Snacks</div>
+        <div class="menu-tab" data-target="bebidas">Bebidas</div>
+        <div class="menu-tab" data-target="banderillas">Banderillas</div>
+        <div class="menu-tab" data-target="michiburguers">Michi Burguers</div>
+    </div>
+
+    <!-- Sección de Snacks -->
+    <section id="snacks" class="menu-section">
+        <div class="container">
+            <div class="section-header"><h2 class="section-title">Nuestros Snacks</h2><p>Crujientes y llenos de sabor para satisfacer tus antojos</p></div>
+            <div class="menu-container">
+                <div class="menu-header header-snacks"><h1><i class="fas fa-utensils me-2"></i>Snacks Michi Crunch</h1></div>
+                <div class="p-4">
+                    <div class="product-list">
+                        <!-- Michi Crispy -->
+                        <div class="product-item" data-id="michi-crispy" data-name="Michi Crispy" data-price="55">
+                            <img src="img/Alimentos/Michi%20Crispy.jpg" alt="Michi Crispy" class="product-image" loading="lazy" onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%2280%22 height%3D%2280%22 viewBox%3D%220 0 80 80%22%3E%3Crect fill%3D%22%23f5f5f5%22 width%3D%2280%22 height%3D%2280%22%2F%3E%3Ctext fill%3D%22%23999%22 font-family%3D%22sans-serif%22 font-size%3D%2210%22 dy%3D%223.5%22 font-weight%3D%22bold%22 x%3D%2250%25%22 y%3D%2250%25%22 text-anchor%3D%22middle%22%3EImagen%3C%2Ftext%3E%3C%2Fsvg%3E'">
+                            <div class="product-info">
+                                <h3 class="product-name">Michi Crispy <span class="product-price">$55</span></h3>
+                                <p class="product-description">Papas a la francesa extra crujientes, finas y elegantes como los bigotes de un gato siamés.</p>
+                                <span class="product-badge">Recomendado</span>
+                            </div>
+                            <button class="add-to-order-btn" onclick="addToCart('michi-crispy')"><i class="fas fa-plus"></i> Añadir</button>
+                        </div>
+
                         <!-- Patitas de Queso -->
                         <div class="product-item" data-id="patitas-queso" data-name="Patitas de Queso" data-price="60">
                             <img src="img/Alimentos/comp-dedos-de-queso.webp" alt="Patitas de Queso" class="product-image" loading="lazy" onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width%3D%2280%22 height%3D%2280%22 viewBox%3D%220 0 80 80%22%3E%3Crect fill%3D%22%23f5f5f5%22 width%3D%2280%22 height%3D%2280%22%2F%3E%3Ctext fill%3D%22%23999%22 font-family%3D%22sans-serif%22 font-size%3D%2210%22 dy%3D%223.5%22 font-weight%3D%22bold%22 x%3D%2250%25%22 y%3D%2250%25%22 text-anchor%3D%22middle%22%3EImagen%3C%2Ftext%3E%3C%2Fsvg%3E'">
